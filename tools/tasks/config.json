@@ -1,0 +1,43 @@
+{
+  "style": [
+    "ui.progress.less",
+    "ui.popover.less",
+    "ui.dropdown.less",
+    "animation.less",
+    "form.less",
+    "button.less",
+    "variables.less",
+    "mixins.less",
+    "base.less",
+    "grid.less",
+    "block-grid.less",
+    "utility.less",
+    "code.less",
+    "image.less",
+    "article.less",
+    "badge.less",
+    "breadcrumb.less",
+    "button-group.less",
+    "comment.less",
+    "input-group.less",
+    "nav.less",
+    "pagination.less",
+    "panel.less",
+    "progress.less",
+    "thumbnail.less",
+    "topbar.less",
+    "print.less",
+	"layui.less"
+  ],
+  "js": [
+    "core.js",
+    "ui.dropdown.js",
+    "ui.popover.js",
+    "ui.progress.js",
+    "util.fullscreen.js",
+    "util.store.js"
+  ],
+  "widgets": [
+    
+  ]
+}
