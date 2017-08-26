@@ -36,7 +36,10 @@
     "url": "https://github.com/allmobilize/amazeui/issues"
   },
   "peerDependencies": {
-    "jquery": "^2.2.3"
+    "jquery": "^2.2.3",
+    "selectize": "^0.12.4",
+    "parsleyjs" : "^2.7.2",
+    "lazysizes": "^4.0.0-rc3"
   },
   "devDependencies": {
     "bistre": "^1.0.1",

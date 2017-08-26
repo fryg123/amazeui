@@ -302,6 +302,12 @@ gulp.task('build:js:pack', function() {
             commonjs2: 'jquery',
             commonjs: 'jquery',
             amd: 'jquery'
+          },
+          parsley: {
+            root: 'parsley',
+            commonjs2: 'parsley',
+            commonjs: 'parsley',
+            amd: 'parsley'
           }
         }
       ]

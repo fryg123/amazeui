@@ -1,9 +1,12 @@
 {
   "style": [
+    "nav.less",
+    "ui.tabs.less",
     "ui.progress.less",
     "ui.popover.less",
     "ui.dropdown.less",
     "animation.less",
+    "ui.component.less",
     "form.less",
     "button.less",
     "variables.less",
@@ -14,30 +17,42 @@
     "utility.less",
     "code.less",
     "image.less",
-    "article.less",
     "badge.less",
     "breadcrumb.less",
     "button-group.less",
-    "comment.less",
+    "icon.less",
     "input-group.less",
-    "nav.less",
+    "list.less",
     "pagination.less",
     "panel.less",
     "progress.less",
     "thumbnail.less",
     "topbar.less",
     "print.less",
-	"layui.less"
+    "layui.less",
+    "selectize.less",
+    "customize.less"
   ],
   "js": [
+    "util.hammer.js",
     "core.js",
+    "ui.collapse.js",
     "ui.dropdown.js",
     "ui.popover.js",
     "ui.progress.js",
+    "ui.tabs.js",
     "util.fullscreen.js",
-    "util.store.js"
+    "util.store.js",
+    "ui.form.js"
+  ],
+  "plugins": [
+    "selectize/dist/js/standalone/selectize.min.js",
+    "parsleyjs/dist/parsley.min.js",
+    "parsleyjs/dist/i18n/zh_cn.js",
+    "parsleyjs/dist/i18n/zh_cn.extra.js",
+    "lazysizes/lazysizes.min.js"
   ],
   "widgets": [
-    
+
   ]
 }

@@ -1,3 +1,11 @@
+/**
+ 
+ @Name: layui
+ @Author: 贤心
+ @Site: www.layui.com
+ 
+ */
+
 /** 基础通用 **/
 .@{ns}inline{position: relative; display: inline-block; *display:inline; *zoom:1; vertical-align: middle;}
 /* 三角形 */.@{ns}edge{position: absolute; width: 0; height: 0; border-style: dashed; border-color: transparent; overflow: hidden;}
@@ -6,14 +14,6 @@
 /* 纯圆角 */.@{ns}circle{border-radius: 100%;}
 .@{ns}show{display: block !important;}
 .@{ns}hide{display: none !important;}
-
-/* 折叠面板 */
-.@{ns}collapse{border: 1px solid #e2e2e2; border-radius: 2px;}
-.@{ns}colla-item{border-top: 1px solid #e2e2e2}
-.@{ns}colla-item:first-child{border-top: none;}
-.@{ns}colla-title{position: relative; height: 42px; line-height: 42px; padding: 0 15px 0 35px; color: #333; background-color: #f2f2f2; cursor: pointer;}
-.@{ns}colla-content{display: none; padding: 10px 15px; line-height: 22px; border-top: 1px solid #e2e2e2; color: #666;}
-.@{ns}colla-icon{position: absolute; left: 15px; top: 0; font-size: 14px;}
 
 /* 背景颜色 */
 .@{ns}bg-red{background-color: #FF5722 !important; color: #fff!important;} /*赤*/
@@ -44,16 +44,16 @@
 .@{ns}form-checked i, .@{ns}form-checked:hover i{color: #5FB878;}
 .@{ns}form-item .@{ns}form-checkbox{margin-top: 4px;}
 
-/* 复选框-原始风格 */.@{ns}form-checkbox[lay-skin="primary"]{height: auto!important; line-height: normal!important; border: none!important; margin-right: 0; padding-right: 0; background: none;}
-.@{ns}form-checkbox[lay-skin="primary"] span{float: right; padding-right: 15px; line-height: 18px; background: none; color: #666;}
-.@{ns}form-checkbox[lay-skin="primary"] i{position: relative; top: 0; width: 16px; height: 16px; line-height: 16px; border: 1px solid #d2d2d2; font-size: 12px; border-radius: 2px; background-color: #fff; -webkit-transition: .1s linear; transition: .1s linear;}
-.@{ns}form-checkbox[lay-skin="primary"]:hover i{border-color: #5FB878; color: #fff;}
-.@{ns}form-checked[lay-skin="primary"] i{border-color: #5FB878; background-color: #5FB878; color: #fff;}
-.@{ns}checkbox-disbaled[lay-skin="primary"] span{background: none!important;}
-.@{ns}checkbox-disbaled[lay-skin="primary"]:hover i{border-color: #d2d2d2;}
-.@{ns}form-item .@{ns}form-checkbox[lay-skin="primary"]{margin-top: 10px;}
+/* 复选框-原始风格 */.@{ns}form-checkbox[data-skin="primary"]{height: auto!important; line-height: normal!important; border: none!important; margin-right: 0; padding-right: 0; background: none;}
+.@{ns}form-checkbox[data-skin="primary"] span{float: right; padding-right: 15px; line-height: 18px; background: none; color: #666;}
+.@{ns}form-checkbox[data-skin="primary"] i{position: relative; top: 0; width: 18px; height: 18px; line-height: 18px; border: 1px solid #d2d2d2; font-size: 12px; border-radius: 2px; background-color: #fff; -webkit-transition: .1s linear; transition: .1s linear;}
+.@{ns}form-checkbox[data-skin="primary"]:hover i{border-color: #5FB878; color: #fff;}
+.@{ns}form-checked[data-skin="primary"] i{border-color: #5FB878; background-color: #5FB878; color: #fff;}
+.@{ns}checkbox-disbaled[data-skin="primary"] span{background: none!important;}
+.@{ns}checkbox-disbaled[data-skin="primary"]:hover i{border-color: #d2d2d2;}
+.@{ns}form-item .@{ns}form-checkbox[data-skin="primary"]{margin-top: 10px;}
 
-/* 复选框-开关风格 */.@{ns}form-switch{position: relative; display: inline-block; vertical-align: middle; height: 22px; line-height: 22px; width: 42px; padding: 0 5px; margin-top: 8px; border: 1px solid #d2d2d2; border-radius: 20px; cursor: pointer; background-color: #fff; -webkit-transition: .1s linear; transition: .1s linear;}
+/* 复选框-开关风格 */.@{ns}form-switch{position: relative; display: inline-block; vertical-align: middle; height: 24px; line-height: 24px; width: 56px; padding: 0 5px; margin-top: 8px; margin-right:10px; border: 1px solid #d2d2d2; border-radius: 20px; cursor: pointer; background-color: #fff; -webkit-transition: .1s linear; transition: .1s linear;}
 .@{ns}form-switch i{position: absolute; left: 5px; top: 3px; width: 16px; height: 16px; border-radius: 20px; background-color: #d2d2d2; -webkit-transition: .1s linear; transition: .1s linear;}
 .@{ns}form-switch em{position: absolute; right: 5px; top: 0; width: 25px; padding: 0!important; text-align: center!important; color: #999!important; font-style: normal!important; font-size: 12px;}
 .@{ns}form-onswitch{border-color: #5FB878; background-color: #5FB878;}
@@ -94,8 +94,8 @@
 
 .@{ns}table th,
 .@{ns}table td,
-.@{ns}table[lay-skin="line"],
-.@{ns}table[lay-skin="row"],
+.@{ns}table[data-skin="line"],
+.@{ns}table[data-skin="row"],
 .@{ns}table-view,
 .@{ns}table-header,
 .@{ns}table-tool{border: 1px solid #e2e2e2}
@@ -106,9 +106,9 @@
 .@{ns}table-hover{background-color: #f2f2f2!important;}
 .@{ns}table-click{background-color: #FFEEE8!important;}
 
-.@{ns}table[lay-skin="line"] th, .@{ns}table[lay-skin="line"] td{border-width: 0; border-bottom-width: 1px;}
-.@{ns}table[lay-skin="row"] th, .@{ns}table[lay-skin="row"] td{border-width: 0;border-right-width: 1px;}
-.@{ns}table[lay-skin="nob"] th, .@{ns}table[lay-skin="nob"] td{border: none;}
+.@{ns}table[data-skin="line"] th, .@{ns}table[data-skin="line"] td{border-width: 0; border-bottom-width: 1px;}
+.@{ns}table[data-skin="row"] th, .@{ns}table[data-skin="row"] td{border-width: 0;border-right-width: 1px;}
+.@{ns}table[data-skin="nob"] th, .@{ns}table[data-skin="nob"] td{border: none;}
 
 .@{ns}table img{max-width:100px;}
 
@@ -123,12 +123,12 @@
 .@{ns}table[lay-data]{display: none;}
 .@{ns}table-view{position: relative; margin: 10px 0; overflow: hidden;}
 .@{ns}table-view .@{ns}table{position: relative; width: auto; margin: 0;}
-.@{ns}table-view .@{ns}table[lay-skin="line"]{border-width: 0; border-right-width: 1px;}
-.@{ns}table-view .@{ns}table[lay-skin="row"]{border-width: 0; border-bottom-width: 1px;}
+.@{ns}table-view .@{ns}table[data-skin="line"]{border-width: 0; border-right-width: 1px;}
+.@{ns}table-view .@{ns}table[data-skin="row"]{border-width: 0; border-bottom-width: 1px;}
 .@{ns}table-view .@{ns}table th,
 .@{ns}table-view .@{ns}table td{padding: 5px 0; border-top: none; border-left: none;}
 .@{ns}table-view .@{ns}table td{cursor: default;}
-.@{ns}table-view .@{ns}form-checkbox[lay-skin="primary"] i{width: 18px; height: 18px;}
+.@{ns}table-view .@{ns}form-checkbox[data-skin="primary"] i{width: 18px; height: 18px;}
 .@{ns}table-header{border-width: 0; border-bottom-width: 1px; overflow: hidden;}
 .@{ns}table-header .@{ns}table{margin-bottom: -1px;}
 .@{ns}table-sort{width: 20px; height: 20px; margin-left: 5px; cursor: pointer!important;}
@@ -275,217 +275,3 @@ body .@{ns}util-face  .@{ns}layer-content{padding:0; background-color:#fff; colo
   100% {opacity: 0;}
 }
 .am-anim-fadeout{-webkit-animation-name: am-fadeout; animation-name: am-fadeout}
-
-/** Mobile **/
-/** layer mobile */
-.@{ns}m-layer{position:relative; z-index: 19891014;}
-.@{ns}m-layer *{-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;}
-.@{ns}m-layershade,
-.@{ns}m-layermain{position:fixed; left:0; top:0; width:100%; height:100%;}
-.@{ns}m-layershade{background-color:rgba(0,0,0, .7); pointer-events:auto;}
-.@{ns}m-layermain{display:table; font-family: Helvetica, arial, sans-serif; pointer-events: none;}
-.@{ns}m-layermain .@{ns}m-layersection{display:table-cell; vertical-align:middle; text-align:center;}
-.@{ns}m-layerchild{position:relative; display:inline-block; text-align:left; background-color:#fff; font-size:14px; border-radius: 5px; box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);  pointer-events:auto;  -webkit-overflow-scrolling: touch;}
-.@{ns}m-layerchild{-webkit-animation-fill-mode: both; animation-fill-mode: both; -webkit-animation-duration: .2s; animation-duration: .2s;}
-
-.@{ns}m-layer0 .@{ns}m-layerchild{width: 90%; max-width: 640px;}
-.@{ns}m-layer1 .@{ns}m-layerchild{border:none; border-radius:0;}
-.@{ns}m-layer2 .@{ns}m-layerchild{width:auto; max-width:260px; min-width:40px; border:none; background: none; box-shadow: none; color:#fff;}
-.@{ns}m-layerchild h3{padding: 0 10px; height: 60px; line-height: 60px; font-size:16px; font-weight: 400;  border-radius: 5px 5px 0 0; text-align: center;}
-.@{ns}m-layerchild h3,
-.@{ns}m-layerbtn span{ text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
-.@{ns}m-layercont{padding: 50px 30px; line-height: 22px; text-align:center;}
-.@{ns}m-layer1 .@{ns}m-layercont{padding:0; text-align:left;}
-.@{ns}m-layer2 .@{ns}m-layercont{text-align:center; padding: 0; line-height: 0;}
-.@{ns}m-layer2 .@{ns}m-layercont i{width:25px; height:25px; margin-left:8px; display:inline-block; background-color:#fff; border-radius:100%;}
-.@{ns}m-layer2 .@{ns}m-layercont p{margin-top: 20px;}
-
-/* loading */
-@-webkit-keyframes am-m-anim-loading{
-    0%,80%,100%{transform:scale(0); -webkit-transform:scale(0)}
-    40%{transform:scale(1); -webkit-transform:scale(1)}
-}
-@keyframes am-m-anim-loading{
-    0%,80%,100%{transform:scale(0); -webkit-transform:scale(0)}
-    40%{transform:scale(1); -webkit-transform:scale(1)}
-}
-.@{ns}m-layer2 .@{ns}m-layercont i{-webkit-animation: am-m-anim-loading 1.4s infinite ease-in-out; animation: am-m-anim-loading 1.4s infinite ease-in-out; -webkit-animation-fill-mode: both; animation-fill-mode: both;}
-
-.@{ns}m-layer2 .@{ns}m-layercont i:first-child{margin-left:0; -webkit-animation-delay: -.32s; animation-delay: -.32s;}
-.@{ns}m-layer2 .@{ns}m-layercont i.@{ns}m-layerload{-webkit-animation-delay: -.16s; animation-delay: -.16s;}
-.@{ns}m-layer2 .@{ns}m-layercont>div{line-height:22px; padding-top:7px; margin-bottom:20px; font-size: 14px;}
-.@{ns}m-layerbtn{display: box; display: -moz-box; display: -webkit-box; width: 100%; position:relative; height: 50px; line-height: 50px; font-size: 0; text-align:center;  border-top:1px solid #D0D0D0; background-color: #F2F2F2; border-radius: 0 0 5px 5px;}
-.@{ns}m-layerbtn span{position:relative; display: block; -moz-box-flex: 1; box-flex: 1; -webkit-box-flex: 1;  text-align:center; font-size:14px; border-radius: 0 0 5px 5px; cursor:pointer;}
-.@{ns}m-layerbtn span[yes]{color: #40AFFE;}
-.@{ns}m-layerbtn span[no]{border-right: 1px solid #D0D0D0; border-radius: 0 0 0 5px;}
-.@{ns}m-layerbtn span:active{background-color: #F6F6F6;}
-.@{ns}m-layerend{position:absolute; right:7px; top:10px; width:30px; height:30px; border: 0; font-weight:400; background: transparent; cursor: pointer; -webkit-appearance: none; font-size:30px;}
-.@{ns}m-layerend::before, .@{ns}m-layerend::after{position:absolute; left:5px; top:15px; content:''; width:18px; height:1px; background-color:#999; transform:rotate(45deg); -webkit-transform:rotate(45deg); border-radius: 3px;}
-.@{ns}m-layerend::after{transform:rotate(-45deg);  -webkit-transform:rotate(-45deg);}
-
-/* 底部对话框风格 */
-body .@{ns}m-layer .@{ns}m-layer-footer{position: fixed; width: 95%; max-width: 100%; margin: 0 auto; left:0; right: 0; bottom: 10px; background: none;}
-.@{ns}m-layer-footer .@{ns}m-layercont{padding: 20px; border-radius: 5px 5px 0 0; background-color: rgba(255,255,255,.8);}
-.@{ns}m-layer-footer .@{ns}m-layerbtn{display: block; height: auto; background: none; border-top: none;}
-.@{ns}m-layer-footer .@{ns}m-layerbtn span{background-color: rgba(255,255,255,.8);}
-.@{ns}m-layer-footer .@{ns}m-layerbtn span[no]{color: #FD482C; border-top: 1px solid #c2c2c2; border-radius: 0 0 5px 5px;}
-.@{ns}m-layer-footer .@{ns}m-layerbtn span[yes]{margin-top: 10px; border-radius: 5px;}
-
-/* 通用提示 */
-body .@{ns}m-layer .@{ns}m-layer-msg{width: auto; max-width: 90%; margin: 0 auto; bottom: -150px; background-color: rgba(0,0,0,.7); color: #fff;}
-.@{ns}m-layer-msg .@{ns}m-layercont{padding: 10px 20px;}
-
-
-/**
- 
- @Name: laydata
- @Author: 贤心
- 
- **/
-
-html #layuicss-laydate{display: none; position: absolute; width: 1989px;}
-
-/* 初始化 */
-.@{ns}laydate *{margin: 0; padding: 0;}
-
-/* 主体结构 */
-.@{ns}laydate, .@{ns}laydate *{box-sizing: border-box;}
-.@{ns}laydate{position: absolute; z-index: 66666666; margin: 5px 0; border-radius: 2px; font-size: 14px; -webkit-animation-duration: 0.3s; animation-duration: 0.3s; -webkit-animation-fill-mode: both; animation-fill-mode: both;}
-.@{ns}laydate-main{width: 272px;}
-.@{ns}laydate-header *,
-.@{ns}laydate-content td,
-.@{ns}laydate-list li{transition-duration: .3s; -webkit-transition-duration: .3s;}
-
-@-webkit-keyframes laydate-upbit{ /* 微微往上滑入 */
-  from {-webkit-transform: translate3d(0, 20px, 0); opacity: 0.3;}
-  to {-webkit-transform: translate3d(0, 0, 0);  opacity: 1;}
-}
-@keyframes laydate-upbit{
-  from {transform: translate3d(0, 20px, 0);  opacity: 0.3;}
-  to {transform: translate3d(0, 0, 0);  opacity: 1;}
-}
-.@{ns}laydate{-webkit-animation-name: laydate-upbit; animation-name: laydate-upbit;}
-.@{ns}laydate-static{ position: relative; z-index: 0; display: inline-block; margin: 0; -webkit-animation: none; animation: none;}
-
-/* 展开年月列表时 */
-.laydate-ym-show .laydate-prev-m,
-.laydate-ym-show .laydate-next-m{display: none !important;}
-.laydate-ym-show .laydate-prev-y,
-.laydate-ym-show .laydate-next-y{display: inline-block !important;}
-.laydate-ym-show .laydate-set-ym span[lay-type="month"]{display: none !important;}
-
-/* 展开时间列表时 */
-.laydate-time-show .@{ns}laydate-header .@{ns}icon,
-.laydate-time-show .laydate-set-ym span[lay-type="year"],
-.laydate-time-show .laydate-set-ym span[lay-type="month"]{display: none !important;}
-
-/* 头部结构 */
-.@{ns}laydate-header{position: relative; line-height:30px; padding: 10px 70px 5px;}
-.@{ns}laydate-header *{display: inline-block; vertical-align: bottom;}
-.@{ns}laydate-header i{position: absolute; top: 10px; padding: 0 5px; color: #999; font-size: 18px; cursor: pointer;}
-.@{ns}laydate-header i.laydate-prev-y{left: 15px;}
-.@{ns}laydate-header i.laydate-prev-m{left: 45px;}
-.@{ns}laydate-header i.laydate-next-y{right: 15px;}
-.@{ns}laydate-header i.laydate-next-m{right: 45px;}
-.laydate-set-ym{width: 100%; text-align: center; box-sizing: border-box; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
-.laydate-set-ym span{padding: 0 5px; cursor: pointer;}
-.laydate-time-text{cursor: default !important;}
-
-/* 主体结构 */
-.@{ns}laydate-content{position: relative; padding: 10px; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
-.@{ns}laydate-content table{border-collapse: collapse; border-spacing: 0;}
-.@{ns}laydate-content th,
-.@{ns}laydate-content td{width: 36px; height: 30px; padding: 5px; text-align: center;}
-.@{ns}laydate-content th{font-weight: 400;}
-.@{ns}laydate-content td{position: relative; cursor: pointer;}
-.laydate-day-mark{position: absolute; left: 0; top: 0; width: 100%; height: 100%; line-height: 30px; font-size: 12px; overflow: hidden;}
-.laydate-day-mark::after{position: absolute; content:''; right: 2px; top: 2px; width: 5px; height: 5px; border-radius: 50%;}
-
-/* 底部结构 */
-.@{ns}laydate-footer{position: relative; height: 46px; line-height: 26px; padding: 10px 20px;}
-.@{ns}laydate-footer span{margin-right: 15px; display: inline-block; cursor: pointer; font-size: 12px;}
-.@{ns}laydate-footer span:hover{color: #5FB878;}
-.laydate-footer-btns{position: absolute; right: 10px; top: 10px;}
-.laydate-footer-btns span{height: 26px; line-height: 26px; margin: 0 0 0 -1px; padding: 0 10px; border: 1px solid #C9C9C9; background-color: #fff;  white-space: nowrap; vertical-align: top; border-radius: 2px;}
-
-/* 年月列表 */
-.@{ns}laydate-list{position: absolute; left: 0; top: 0; width: 100%; height: 100%; padding: 10px; box-sizing: border-box; background-color: #fff;}
-.@{ns}laydate-list>li{position: relative; display: inline-block; width: 33.3%; height: 36px; line-height: 36px; margin: 3px 0; vertical-align: middle; text-align: center; cursor: pointer;}
-.laydate-month-list>li{width: 25%; margin: 17px 0;}
-.laydate-time-list{}
-.laydate-time-list>li{height: 100%; margin: 0; line-height: normal; cursor: default;}
-.laydate-time-list p{position: relative; top: -4px; line-height: 29px;}
-.laydate-time-list ol{height: 181px; overflow: hidden;}
-.laydate-time-list>li:hover ol{overflow-y: auto;}
-.laydate-time-list ol li{padding-left: 33px; line-height: 30px; text-align: left; cursor: pointer;}
-
-/* 提示 */
-.@{ns}laydate-hint{position: absolute; top: 115px; left: 50%; width: 250px; margin-left: -125px; line-height: 20px; padding: 15px; text-align: center; font-size: 12px; color: #FF5722;}
-
-
-/* 双日历 */
-.@{ns}laydate-range{width: 546px;}
-.@{ns}laydate-range .@{ns}laydate-main{display: inline-block; vertical-align: middle;}
-.@{ns}laydate-range .laydate-main-list-0 .laydate-next-m,
-.@{ns}laydate-range .laydate-main-list-0 .laydate-next-y,
-.@{ns}laydate-range .laydate-main-list-1 .laydate-prev-y,
-.@{ns}laydate-range .laydate-main-list-1 .laydate-prev-m{display: none;}
-.@{ns}laydate-range .laydate-main-list-1 .@{ns}laydate-content{border-left: 1px solid #e2e2e2;}
-
-
-/* 默认简约主题 */
-.@{ns}laydate, .@{ns}laydate-hint{border: 1px solid #d2d2d2; box-shadow: 0 2px 4px rgba(0,0,0,.12); background-color: #fff; color: #666;}
-.@{ns}laydate-header{border-bottom: 1px solid #e2e2e2;}
-.@{ns}laydate-header i:hover,
-.@{ns}laydate-header span:hover{color: #5FB878;}
-.@{ns}laydate-content{border-top: none 0; border-bottom: none 0;}
-.@{ns}laydate-content th{color: #333;}
-.@{ns}laydate-content td{color: #666;}
-.@{ns}laydate-content td.laydate-selected{background-color: #00F7DE;}
-.laydate-selected:hover{background-color: #00F7DE !important;}
-.@{ns}laydate-content td:hover,
-.@{ns}laydate-list li:hover{background-color: #eaeaea; color: #333;}
-.laydate-time-list li ol{margin: 0; padding: 0; border: 1px solid #e2e2e2; border-left-width: 0;}
-.laydate-time-list li:first-child ol{border-left-width: 1px;}
-.laydate-time-list>li:hover{background: none;}
-.@{ns}laydate-content .laydate-day-prev,
-.@{ns}laydate-content .laydate-day-next{color: #d2d2d2;}
-.laydate-selected.laydate-day-prev,
-.laydate-selected.laydate-day-next{color: #fff !important;}
-.@{ns}laydate-footer{border-top: 1px solid #e2e2e2;}
-.@{ns}laydate-hint{color: #FF5722;}
-.laydate-day-mark::after{background-color: #5FB878;}
-.@{ns}laydate-content td.@{ns}this .laydate-day-mark::after{display: none;}
-.@{ns}laydate-footer span[lay-type="date"]{color: #5FB878;}
-.@{ns}laydate .@{ns}this{background-color: #009688 !important; color: #fff !important;}
-.@{ns}laydate .laydate-disabled,
-.@{ns}laydate .laydate-disabled:hover{background:none !important; color: #d2d2d2 !important; cursor: not-allowed !important; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
-
-/* 墨绿/自定义背景色主题 */
-.laydate-theme-molv{border: none;}
-.laydate-theme-molv.@{ns}laydate-range{width: 548px}
-.laydate-theme-molv .@{ns}laydate-main{width: 274px;}
-.laydate-theme-molv .@{ns}laydate-header{border: none; background-color: #009688;}
-.laydate-theme-molv .@{ns}laydate-header i,
-.laydate-theme-molv .@{ns}laydate-header span{color: #f6f6f6;}
-.laydate-theme-molv .@{ns}laydate-header i:hover,
-.laydate-theme-molv .@{ns}laydate-header span:hover{color: #fff;}
-.laydate-theme-molv .@{ns}laydate-content{border: 1px solid #e2e2e2; border-top: none; border-bottom: none;}
-.laydate-theme-molv .laydate-main-list-1 .@{ns}laydate-content{border-left: none;}
-.laydate-theme-molv .@{ns}laydate-footer{border: 1px solid #e2e2e2;}
-
-/* 格子主题 */
-.laydate-theme-grid .@{ns}laydate-content td,
-.laydate-theme-grid .@{ns}laydate-content thead,
-.laydate-theme-grid .laydate-year-list>li,
-.laydate-theme-grid .laydate-month-list>li{border: 1px solid #e2e2e2;}
-.laydate-theme-grid .laydate-selected,
-.laydate-theme-grid .laydate-selected:hover{background-color: #f2f2f2 !important; color: #009688 !important;}
-.laydate-theme-grid .laydate-selected.laydate-day-prev,
-.laydate-theme-grid .laydate-selected.laydate-day-next{color: #d2d2d2 !important;}
-.laydate-theme-grid .laydate-year-list,
-.laydate-theme-grid .laydate-month-list{margin: 1px 0 0 1px;}
-.laydate-theme-grid .laydate-year-list>li,
-.laydate-theme-grid .laydate-month-list>li{margin: 0 -1px -1px 0;}
-.laydate-theme-grid .laydate-year-list>li{height: 43px; line-height: 43px;}
-.laydate-theme-grid .laydate-month-list>li{height: 71px; line-height: 71px;}

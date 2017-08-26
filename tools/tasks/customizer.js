@@ -15,8 +15,8 @@ var cstmzTmp = path.join(__dirname, '../../.cstmz-tmp');
 var DEFAULTS = {
   dist: cstmzPath,
   tmp: cstmzTmp,
-  js: path.join(cstmzTmp, 'js/amazeui.custom.js'),
-  less: path.join(cstmzTmp, 'less/amazeui.custom.less'),
+  js: path.join(cstmzTmp, 'js/amazeui.js'),
+  less: path.join(cstmzTmp, 'less/amazeui.less'),
   AUTOPREFIXER_BROWSERS: [
     'ie >= 8',
     'ie_mob >= 10',
@@ -64,6 +64,10 @@ gulp.task('customizer:preparing', function(callback) {
 
   config.js.forEach(function(file) {
     js.push(format('require("../../js/%s");', file));
+  });
+
+  config.plugins.forEach(function(file) {
+    js.push(format('require("../../node_modules/%s");', file));
   });
 
   // widgets
@@ -133,7 +137,7 @@ gulp.task('customizer:js', function() {
   return gulp.src(DEFAULTS.js)
     .pipe(webpack({
       output: {
-        filename: 'amazeui.custom.js',
+        filename: 'amazeui.js',
         library: 'AMUI',
         libraryTarget: 'umd'
       },

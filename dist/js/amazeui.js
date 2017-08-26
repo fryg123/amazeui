@@ -1,14 +1,14 @@
-/*! Amaze UI v2.7.2 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-08-17T16:17:24+0800 */ 
+/*! Amaze UI v2.7.2 | by Amaze UI Team | (c) 2017 AllMobilize, Inc. | Licensed under MIT | 2017-08-25T16:09:36+0800 */ 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("jquery"));
+		module.exports = factory(require("jquery"), require("parsley"));
 	else if(typeof define === 'function' && define.amd)
-		define(["jquery"], factory);
+		define(["jquery", "parsley"], factory);
 	else if(typeof exports === 'object')
-		exports["AMUI"] = factory(require("jquery"));
+		exports["AMUI"] = factory(require("jquery"), require("parsley"));
 	else
-		root["AMUI"] = factory(root["jQuery"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
+		root["AMUI"] = factory(root["jQuery"], root["parsley"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_16__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -53,7 +53,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -68,29 +68,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(9);
 	__webpack_require__(10);
 	__webpack_require__(11);
-	__webpack_require__(14);
 	__webpack_require__(15);
-	__webpack_require__(16);
 	__webpack_require__(17);
 	__webpack_require__(18);
 	__webpack_require__(19);
 	__webpack_require__(20);
 	__webpack_require__(21);
 	__webpack_require__(22);
+	__webpack_require__(23);
 	__webpack_require__(24);
 	__webpack_require__(25);
-	__webpack_require__(23);
 	__webpack_require__(27);
 	__webpack_require__(28);
-	__webpack_require__(29);
+	__webpack_require__(26);
 	__webpack_require__(30);
 	__webpack_require__(31);
 	__webpack_require__(32);
 	__webpack_require__(33);
-	__webpack_require__(26);
 	__webpack_require__(34);
 	__webpack_require__(35);
 	__webpack_require__(36);
+	__webpack_require__(29);
 	__webpack_require__(37);
 	__webpack_require__(38);
 	__webpack_require__(39);
@@ -109,19 +107,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(52);
 	__webpack_require__(53);
 	__webpack_require__(54);
+	__webpack_require__(55);
+	__webpack_require__(56);
+	__webpack_require__(57);
 
 	module.exports = $.AMUI = UI;
 
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -732,9 +733,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI;
 
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*! Hammer.JS - v2.0.8 - 2016-04-22
 	 * http://hammerjs.github.io/
@@ -3402,9 +3403,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.Hammer = Hammer;
 
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -4052,9 +4053,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.addToHomescreen = ath;
 
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -4113,9 +4114,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = Alert;
 
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -4249,9 +4250,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.button = Button;
 
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -4437,9 +4438,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	//       寻找更好的未知高度 transition 动画解决方案，max-height 之类的就算了
 
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5125,9 +5126,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	//       2. less 优化
 
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5239,9 +5240,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.dimmer = new Dimmer();
 
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -5327,7 +5328,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (animation) {
 	    this.animating = 1;
 	    $dropdown.addClass(this.options.animation).
-	      on(animation.end + '.open.dropdown.amui', $.proxy(function() {
+	      one(animation.end + '.open.dropdown.amui', $.proxy(function() {
 	        complete();
 	        $dropdown.removeClass(this.options.animation);
 	      }, this));
@@ -5386,7 +5387,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  var $dropdown = this.$dropdown;
-	  
+
 	  // @see #873
 	  if (e && e.offset) {
 	    $dropdown.offset(e.offset);
@@ -5473,9 +5474,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	//       3. 宽度适应
 
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(setImmediate) {var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
@@ -6771,15 +6772,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12).setImmediate))
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(13).nextTick;
 	var apply = Function.prototype.apply;
-	var slice = Array.prototype.slice;
-	var immediateIds = {};
-	var nextImmediateId = 0;
 
 	// DOM APIs, for completeness
 
@@ -6790,7 +6787,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
 	};
 	exports.clearTimeout =
-	exports.clearInterval = function(timeout) { timeout.close(); };
+	exports.clearInterval = function(timeout) {
+	  if (timeout) {
+	    timeout.close();
+	  }
+	};
 
 	function Timeout(id, clearFn) {
 	  this._id = id;
@@ -6824,38 +6825,208 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 
-	// That's not how node.js implements it but the exposed api is the same.
-	exports.setImmediate = typeof setImmediate === "function" ? setImmediate : function(fn) {
-	  var id = nextImmediateId++;
-	  var args = arguments.length < 2 ? false : slice.call(arguments, 1);
+	// setimmediate attaches itself to the global object
+	__webpack_require__(13);
+	exports.setImmediate = setImmediate;
+	exports.clearImmediate = clearImmediate;
 
-	  immediateIds[id] = true;
 
-	  nextTick(function onNextTick() {
-	    if (immediateIds[id]) {
-	      // fn.call() is faster so we optimize for the common use-case
-	      // @see http://jsperf.com/call-apply-segu
-	      if (args) {
-	        fn.apply(null, args);
-	      } else {
-	        fn.call(null);
-	      }
-	      // Prevent ids from leaking
-	      exports.clearImmediate(id);
-	    }
-	  });
-
-	  return id;
-	};
-
-	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
-	  delete immediateIds[id];
-	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12).setImmediate, __webpack_require__(12).clearImmediate))
-
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+	    "use strict";
+
+	    if (global.setImmediate) {
+	        return;
+	    }
+
+	    var nextHandle = 1; // Spec says greater than zero
+	    var tasksByHandle = {};
+	    var currentlyRunningATask = false;
+	    var doc = global.document;
+	    var registerImmediate;
+
+	    function setImmediate(callback) {
+	      // Callback can either be a function or a string
+	      if (typeof callback !== "function") {
+	        callback = new Function("" + callback);
+	      }
+	      // Copy function arguments
+	      var args = new Array(arguments.length - 1);
+	      for (var i = 0; i < args.length; i++) {
+	          args[i] = arguments[i + 1];
+	      }
+	      // Store and register the task
+	      var task = { callback: callback, args: args };
+	      tasksByHandle[nextHandle] = task;
+	      registerImmediate(nextHandle);
+	      return nextHandle++;
+	    }
+
+	    function clearImmediate(handle) {
+	        delete tasksByHandle[handle];
+	    }
+
+	    function run(task) {
+	        var callback = task.callback;
+	        var args = task.args;
+	        switch (args.length) {
+	        case 0:
+	            callback();
+	            break;
+	        case 1:
+	            callback(args[0]);
+	            break;
+	        case 2:
+	            callback(args[0], args[1]);
+	            break;
+	        case 3:
+	            callback(args[0], args[1], args[2]);
+	            break;
+	        default:
+	            callback.apply(undefined, args);
+	            break;
+	        }
+	    }
+
+	    function runIfPresent(handle) {
+	        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+	        // So if we're currently running a task, we'll need to delay this invocation.
+	        if (currentlyRunningATask) {
+	            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+	            // "too much recursion" error.
+	            setTimeout(runIfPresent, 0, handle);
+	        } else {
+	            var task = tasksByHandle[handle];
+	            if (task) {
+	                currentlyRunningATask = true;
+	                try {
+	                    run(task);
+	                } finally {
+	                    clearImmediate(handle);
+	                    currentlyRunningATask = false;
+	                }
+	            }
+	        }
+	    }
+
+	    function installNextTickImplementation() {
+	        registerImmediate = function(handle) {
+	            process.nextTick(function () { runIfPresent(handle); });
+	        };
+	    }
+
+	    function canUsePostMessage() {
+	        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+	        // where `global.postMessage` means something completely different and can't be used for this purpose.
+	        if (global.postMessage && !global.importScripts) {
+	            var postMessageIsAsynchronous = true;
+	            var oldOnMessage = global.onmessage;
+	            global.onmessage = function() {
+	                postMessageIsAsynchronous = false;
+	            };
+	            global.postMessage("", "*");
+	            global.onmessage = oldOnMessage;
+	            return postMessageIsAsynchronous;
+	        }
+	    }
+
+	    function installPostMessageImplementation() {
+	        // Installs an event handler on `global` for the `message` event: see
+	        // * https://developer.mozilla.org/en/DOM/window.postMessage
+	        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+	        var messagePrefix = "setImmediate$" + Math.random() + "$";
+	        var onGlobalMessage = function(event) {
+	            if (event.source === global &&
+	                typeof event.data === "string" &&
+	                event.data.indexOf(messagePrefix) === 0) {
+	                runIfPresent(+event.data.slice(messagePrefix.length));
+	            }
+	        };
+
+	        if (global.addEventListener) {
+	            global.addEventListener("message", onGlobalMessage, false);
+	        } else {
+	            global.attachEvent("onmessage", onGlobalMessage);
+	        }
+
+	        registerImmediate = function(handle) {
+	            global.postMessage(messagePrefix + handle, "*");
+	        };
+	    }
+
+	    function installMessageChannelImplementation() {
+	        var channel = new MessageChannel();
+	        channel.port1.onmessage = function(event) {
+	            var handle = event.data;
+	            runIfPresent(handle);
+	        };
+
+	        registerImmediate = function(handle) {
+	            channel.port2.postMessage(handle);
+	        };
+	    }
+
+	    function installReadyStateChangeImplementation() {
+	        var html = doc.documentElement;
+	        registerImmediate = function(handle) {
+	            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+	            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+	            var script = doc.createElement("script");
+	            script.onreadystatechange = function () {
+	                runIfPresent(handle);
+	                script.onreadystatechange = null;
+	                html.removeChild(script);
+	                script = null;
+	            };
+	            html.appendChild(script);
+	        };
+	    }
+
+	    function installSetTimeoutImplementation() {
+	        registerImmediate = function(handle) {
+	            setTimeout(runIfPresent, 0, handle);
+	        };
+	    }
+
+	    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+	    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+	    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+
+	    // Don't get fooled by e.g. browserify environments.
+	    if ({}.toString.call(global.process) === "[object process]") {
+	        // For Node.js before 0.9
+	        installNextTickImplementation();
+
+	    } else if (canUsePostMessage()) {
+	        // For non-IE10 modern browsers
+	        installPostMessageImplementation();
+
+	    } else if (global.MessageChannel) {
+	        // For web workers, where supported
+	        installMessageChannelImplementation();
+
+	    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+	        // For IE 6–8
+	        installReadyStateChangeImplementation();
+
+	    } else {
+	        // For older browsers
+	        installSetTimeoutImplementation();
+	    }
+
+	    attachTo.setImmediate = setImmediate;
+	    attachTo.clearImmediate = clearImmediate;
+	}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(14)))
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
 
 	// shim for using process in browser
 	var process = module.exports = {};
@@ -6868,25 +7039,40 @@ return /******/ (function(modules) { // webpackBootstrap
 	var cachedSetTimeout;
 	var cachedClearTimeout;
 
+	function defaultSetTimout() {
+	    throw new Error('setTimeout has not been defined');
+	}
+	function defaultClearTimeout () {
+	    throw new Error('clearTimeout has not been defined');
+	}
 	(function () {
 	    try {
-	        cachedSetTimeout = setTimeout;
-	    } catch (e) {
-	        cachedSetTimeout = function () {
-	            throw new Error('setTimeout is not defined');
+	        if (typeof setTimeout === 'function') {
+	            cachedSetTimeout = setTimeout;
+	        } else {
+	            cachedSetTimeout = defaultSetTimout;
 	        }
+	    } catch (e) {
+	        cachedSetTimeout = defaultSetTimout;
 	    }
 	    try {
-	        cachedClearTimeout = clearTimeout;
-	    } catch (e) {
-	        cachedClearTimeout = function () {
-	            throw new Error('clearTimeout is not defined');
+	        if (typeof clearTimeout === 'function') {
+	            cachedClearTimeout = clearTimeout;
+	        } else {
+	            cachedClearTimeout = defaultClearTimeout;
 	        }
+	    } catch (e) {
+	        cachedClearTimeout = defaultClearTimeout;
 	    }
 	} ())
 	function runTimeout(fun) {
 	    if (cachedSetTimeout === setTimeout) {
 	        //normal enviroments in sane situations
+	        return setTimeout(fun, 0);
+	    }
+	    // if setTimeout wasn't available but was latter defined
+	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+	        cachedSetTimeout = setTimeout;
 	        return setTimeout(fun, 0);
 	    }
 	    try {
@@ -6907,6 +7093,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	function runClearTimeout(marker) {
 	    if (cachedClearTimeout === clearTimeout) {
 	        //normal enviroments in sane situations
+	        return clearTimeout(marker);
+	    }
+	    // if clearTimeout wasn't available but was latter defined
+	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+	        cachedClearTimeout = clearTimeout;
 	        return clearTimeout(marker);
 	    }
 	    try {
@@ -7007,6 +7198,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	process.removeListener = noop;
 	process.removeAllListeners = noop;
 	process.emit = noop;
+	process.prependListener = noop;
+	process.prependOnceListener = noop;
+
+	process.listeners = function (name) { return [] }
 
 	process.binding = function (name) {
 	    throw new Error('process.binding is not supported');
@@ -7019,9 +7214,166 @@ return /******/ (function(modules) { // webpackBootstrap
 	process.umask = function() { return 0; };
 
 
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var $ = __webpack_require__(1);
+	var UI = __webpack_require__(2);
+	var parsley = __webpack_require__(16);
+
+	var Form = function (element, options) {
+	  this.options = $.extend({}, Form.DEFAULTS, options);
+	  this.$element = $(element);
+	  this.init();
+	};
+
+	Form.DEFAULTS = {};
+
+	Form.prototype.init = function () {
+	      //var $element = this.$element;
+	      //var element = $element[0];
+	      //var options = this.options;
+	      console.log("form init!");
+
+	      this.radio();
+	      this.checkbox();
+	};
+
+	Form.prototype.checkbox = function () {
+	      var self = this;
+	  var CLASS = {
+	      checkbox: ['am-form-checkbox', 'am-form-checked', 'checkbox'],
+	      _switch: ['am-form-switch', 'am-form-onswitch', 'switch']
+	    },
+	    checks = this.$element.find('input[type=checkbox]')
+	    ,
+	    events = function (reElem, RE_CLASS) {
+	      var check = $(this);
+
+	      //勾选
+	      reElem.on('click', function () {
+	        var filter = check.attr('lay-filter') //获取过滤器
+	          ,
+	          text = (check.attr('lay-text') || '').split('|');
+
+	        if (check[0].disabled) return;
+
+	        check[0].checked ? (
+	          check[0].checked = false, reElem.removeClass(RE_CLASS[1]).find('em').text(text[1])
+	        ) : (
+	          check[0].checked = true, reElem.addClass(RE_CLASS[1]).find('em').text(text[0])
+	        );
+
+	        layui.event.call(check[0], MOD_NAME, RE_CLASS[2] + '(' + filter + ')', {
+	          elem: check[0],
+	          value: check[0].value,
+	          othis: reElem
+	        });
+	      });
+	    };
+
+	  checks.each(function (index, check) {
+	    var othis = $(this),
+	      skin = othis.attr('lay-skin'),
+	      text = (othis.attr('lay-text') || '').split('|'),
+	      disabled = this.disabled;
+	    if (skin === 'switch') skin = '_' + skin;
+	    var RE_CLASS = CLASS[skin] || CLASS.checkbox;
+
+	    if (typeof othis.attr('lay-ignore') === 'string') return othis.show();
+
+	    //替代元素
+	    var hasRender = othis.next('.' + RE_CLASS[0]);
+	    var reElem = $(['<div class="am-unselect ' + RE_CLASS[0] + (
+	      check.checked ? (' ' + RE_CLASS[1]) : '') + (disabled ? ' am-checkbox-disbaled ' + DISABLED : '') + '" lay-skin="' + (skin || '') + '">', {
+	      _switch: '<em>' + ((check.checked ? text[0] : text[1]) || '') + '</em><i></i>'
+	    }[skin] || ((check.title.replace(/\s/g, '') ? ('<span>' + check.title + '</span>') : '') + '<i class="am-icon">' + (skin ? '&#xe605;' : '&#xe618;') + '</i>'), '</div>'].join(''));
+
+	    hasRender[0] && hasRender.remove(); //如果已经渲染，则Rerender
+	    othis.after(reElem);
+	    events.call(this, reElem, RE_CLASS);
+	  });
+	};
+
+	Form.prototype.radio = function () {
+	  var CLASS = 'layui-form-radio',
+	    ICON = ['&#xe643;', '&#xe63f;'],
+	    radios = this.$element.find('input[type=radio]')
+	    ,
+	    events = function (reElem) {
+	      var radio = $(this),
+	        ANIM = 'layui-anim-scaleSpring';
+
+	      reElem.on('click', function () {
+	        var name = radio[0].name,
+	          forms = radio.parents(ELEM);
+	        var filter = radio.attr('lay-filter'); //获取过滤器
+	        var sameRadio = forms.find('input[name=' + name.replace(/(\.|#|\[|\])/g, '\\$1') + ']'); //找到相同name的兄弟
+
+	        if (radio[0].disabled) return;
+
+	        layui.each(sameRadio, function () {
+	          var next = $(this).next('.' + CLASS);
+	          this.checked = false;
+	          next.removeClass(CLASS + 'ed');
+	          next.find('.layui-icon').removeClass(ANIM).html(ICON[1]);
+	        });
+
+	        radio[0].checked = true;
+	        reElem.addClass(CLASS + 'ed');
+	        reElem.find('.layui-icon').addClass(ANIM).html(ICON[0]);
+
+	        layui.event.call(radio[0], MOD_NAME, 'radio(' + filter + ')', {
+	          elem: radio[0],
+	          value: radio[0].value,
+	          othis: reElem
+	        });
+	      });
+	    };
+
+	  radios.each(function (index, radio) {
+	    var othis = $(this),
+	      hasRender = othis.next('.' + CLASS),
+	      disabled = this.disabled;
+
+	    if (typeof othis.attr('lay-ignore') === 'string') return othis.show();
+
+	    //替代元素
+	    var reElem = $(['<div class="layui-unselect ' + CLASS + (radio.checked ? (' ' + CLASS + 'ed') : '') + (disabled ? ' layui-radio-disbaled ' + DISABLED : '') + '">', '<i class="layui-anim layui-icon">' + ICON[radio.checked ? 0 : 1] + '</i>', '<span>' + (radio.title || '未命名') + '</span>', '</div>'].join(''));
+
+	    hasRender[0] && hasRender.remove(); //如果已经渲染，则Rerender
+	    othis.after(reElem);
+	    events.call(this, reElem);
+	  });
+	};
+
+	UI.plugin('form', Form, {
+	  after: function() {
+	    if (UI.support.touch) {
+
+	    }
+	  }
+	});
+
+	UI.ready(function(context) {
+	  $('.am-form', context).form();
+	});
+
+	module.exports = Form;
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_16__;
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -8053,9 +8405,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* jshint +W101, +W116, +W109 */
 
 
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -8359,9 +8711,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.modal = Modal;
 
 
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -8559,9 +8911,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	// http://dbushell.github.io/Responsive-Off-Canvas-Menu/step4.html
 
 
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -9307,9 +9659,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.pichzoom = definePinchZoom($);
 
 
-/***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -9550,9 +9902,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	// TODO: 允许用户定义位置
 
 
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -10032,15 +10384,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.progress = Progress;
 
 
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	var PinchZoom = __webpack_require__(17);
+	var PinchZoom = __webpack_require__(20);
 	var Hammer = __webpack_require__(3);
 	var animation = UI.support.animation;
 	var transition = UI.support.transition;
@@ -10449,9 +10801,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	//       4. 图片高度问题：由于 PinchZoom 的原因，过高的图片如果设置看了滚动，则放大以后显示不全
 
 
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -10550,15 +10902,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = ScrollSpy;
 
 
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	__webpack_require__(23);
+	__webpack_require__(26);
 
 	/**
 	 * @via https://github.com/uikit/uikit/
@@ -10679,9 +11031,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	//       3. smooth scroll pushState
 
 
-/***/ },
-/* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -10816,9 +11168,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = SmoothScroll;
 
 
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -11238,16 +11590,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = Selected;
 
 
-/***/ },
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(15);
+	__webpack_require__(18);
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	var QRCode = __webpack_require__(26);
+	var QRCode = __webpack_require__(29);
 	var doc = document;
 	var $doc = $(doc);
 
@@ -11596,9 +11948,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.share = share;
 
 
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
@@ -14115,9 +14467,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.qrcode = QRCode;
 
 
-/***/ },
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -14330,9 +14682,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = Sticky;
 
 
-/***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -14582,9 +14934,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	//       2. touch 事件处理逻辑优化
 
 
-/***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -14699,9 +15051,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	// TODO: 与表单验证结合使用的情况
 
 
-/***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -15303,9 +15655,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = Validator;
 
 
-/***/ },
-/* 31 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -15363,9 +15715,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.utils.cookie = cookie;
 
 
-/***/ },
-/* 32 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -15509,9 +15861,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.fullscreen = screenfull;
 
 
-/***/ },
-/* 33 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -15588,9 +15940,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = UI.Geolocation = Geolocation;
 
 
-/***/ },
-/* 34 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 
@@ -15730,9 +16082,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
-/***/ },
-/* 35 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -15787,9 +16139,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 36 */
-/***/ function(module, exports) {
+/***/ }),
+/* 39 */
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -15798,9 +16150,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -15845,15 +16197,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 38 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	__webpack_require__(20);
+	__webpack_require__(23);
 
 	/**
 	 * Is Images zoomable
@@ -15905,17 +16257,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 39 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	__webpack_require__(15);
+	__webpack_require__(18);
 	var addToHS = __webpack_require__(4);
-	var cookie = __webpack_require__(31);
+	var cookie = __webpack_require__(34);
 
 	function footerInit() {
 	  // modal mode
@@ -15947,15 +16299,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 40 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	__webpack_require__(20);
+	__webpack_require__(23);
 
 	function galleryInit() {
 	  var $gallery = $('[data-am-widget="gallery"]');
@@ -15978,15 +16330,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 41 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	__webpack_require__(23);
+	__webpack_require__(26);
 
 	function goTopInit() {
 	  var $goTop = $('[data-am-widget="gotop"]');
@@ -16021,9 +16373,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 42 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -16047,9 +16399,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 43 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -16061,9 +16413,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 44 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -16075,9 +16427,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 45 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* jshint strict: false, maxlen: 200 */
 	/* global BMap */
@@ -16204,9 +16556,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 46 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -16237,16 +16589,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 47 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	var IScroll = __webpack_require__(14);
-	__webpack_require__(16);
+	var IScroll = __webpack_require__(17);
+	__webpack_require__(19);
 	__webpack_require__(7);
 
 	var menuInit = function() {
@@ -16394,17 +16746,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 48 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	var share = __webpack_require__(25);
-	var QRCode = __webpack_require__(26);
-	__webpack_require__(15);
+	var share = __webpack_require__(28);
+	var QRCode = __webpack_require__(29);
+	__webpack_require__(18);
 
 	function navbarInit() {
 	  var $navBar = $('[data-am-widget="navbar"]');
@@ -16562,9 +16914,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 49 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -16575,16 +16927,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 50 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	var IScroll = __webpack_require__(14);
-	__webpack_require__(20);
+	var IScroll = __webpack_require__(17);
+	__webpack_require__(23);
 
 	/**
 	 * 表格滚动
@@ -16640,9 +16992,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 51 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -16666,15 +17018,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 52 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var $ = __webpack_require__(1);
 	var UI = __webpack_require__(2);
-	__webpack_require__(28);
+	__webpack_require__(31);
 
 	function tabsInit() {
 	  $('[data-am-widget="tabs"]').each(function() {
@@ -16691,9 +17043,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 53 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -16704,9 +17056,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
-/* 54 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -16774,7 +17126,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;
