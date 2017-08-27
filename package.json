@@ -37,7 +37,6 @@
   },
   "peerDependencies": {
     "jquery": "^2.2.3",
-    "selectize": "^0.12.4",
     "parsleyjs" : "^2.7.2",
     "lazysizes": "^4.0.0-rc3"
   },
