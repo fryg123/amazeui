@@ -37,6 +37,7 @@ Form.prototype.init = function () {
     this.radio();
     this.checkbox();
     this.select();
+    this.slider();
 };
 //遍历
 Form.prototype.each = function (obj, fn) {
@@ -179,6 +180,24 @@ Form.prototype.select = function () {
         });
     });
 };
+
+Form.prototype.slider = function() {
+    $('.slider').each(function() {
+        var $this = $(this);
+        var configJson = $this.attr('data-config');
+        var config = null;
+        if (configJson)
+            config = JSON.parse(configJson);
+        config = config || {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+          };
+        $this.slick(config);
+    });
+}
 
 UI.plugin('form', Form, {
     after: function () {

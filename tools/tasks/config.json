@@ -32,6 +32,7 @@
     "print.less",
     "layui.less",
     "selectize.less",
+    "amazeui.slick.less",
     "customize.less"
   ],
   "js": [
@@ -53,7 +54,7 @@
     "parsleyjs/dist/i18n/zh_cn.js",
     "parsleyjs/dist/i18n/zh_cn.extra.js",
     "lazysizes/lazysizes.min.js",
-    "slick-carousel/slick/slick.min.min.js"
+    "slick-carousel/slick/slick.min.js"
   ],
   "widgets": [
 
