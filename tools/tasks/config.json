@@ -52,7 +52,8 @@
     "parsleyjs/dist/parsley.js",
     "parsleyjs/dist/i18n/zh_cn.js",
     "parsleyjs/dist/i18n/zh_cn.extra.js",
-    "lazysizes/lazysizes.min.js"
+    "lazysizes/lazysizes.min.js",
+    "slick-carousel/slick/slick.min.min.js"
   ],
   "widgets": [
 

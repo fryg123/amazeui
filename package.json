@@ -38,7 +38,8 @@
   "peerDependencies": {
     "jquery": "^2.2.3",
     "parsleyjs" : "^2.7.2",
-    "lazysizes": "^4.0.0-rc3"
+    "lazysizes": "^4.0.0-rc3",
+    "slick-carousel": "^1.7.1"
   },
   "devDependencies": {
     "bistre": "^1.0.1",
