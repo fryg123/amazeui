@@ -1,4 +1,6 @@
 @import "variables.less";
+@box-padding: 1.25rem;
+@box-header-padding: .6rem 1.25rem;
 // Box
 // =============================================================================
 .box {
@@ -7,7 +9,7 @@
     background: #ffffff;
     border-top: 3px solid #d2d6de;
     margin-bottom: 20px;
-    padding: 12px;
+    //padding: 10px 12px;
     width: 100%;
     box-shadow: 0 1px 1px #BBBBBB;
     .border-right {
@@ -223,7 +225,7 @@
 .box-header {
     color: #444;
     display: block;
-    padding: 10px;
+    padding: @box-header-padding;
     position: relative;
 }
 
@@ -291,7 +293,10 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
-    padding: 10px;
+    padding: @box-padding;
+    height: auto;
+    //transition: height .5s;
+    overflow: hidden;
 }
 
 .no-header .box-body {
@@ -335,12 +340,27 @@
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
     border-top: 1px solid #f4f4f4;
-    padding: 10px;
+    padding: @box-padding;
     background-color: #ffffff;
 }
 
 // 自定义
 // =============================================================================
+.@{ns}btn-info {
+    .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+    .hook-btn-secondary;
+}
+
+.am-modal-ft { padding: 12px 18px 12px 18px;border-top: 1px solid #e3e8ee; text-align: right; }
+.am-modal-hd {
+    border-bottom: 1px solid #e3e8ee; line-height: 1; padding:14px 16px;
+    h3 { text-align: left; margin: 0; padding: 0 12px 0 0; font-size: 80%; color: #333; font-weight:700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+    .am-close { top:3px; right:8px; color:#999; font-size:30px;
+        &:hover { color:@link-hover-color }
+    }
+}
+.am-modal-hd+.am-modal-bd { padding:16px }
+
 .am-form-group { margin-bottom: 0.8rem; 
     .am-alert { margin: 0 }
 }

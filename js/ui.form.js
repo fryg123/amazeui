@@ -38,6 +38,7 @@ Form.prototype.init = function () {
     this.checkbox();
     this.select();
     this.slider();
+    this.widget();
 };
 //遍历
 Form.prototype.each = function (obj, fn) {
@@ -161,7 +162,7 @@ Form.prototype.select = function () {
     selects.each(function (index, select) {
         var $this = $(this);
         if (typeof $this.attr('data-ignore') === 'string') return;
-        $this.selectize({
+        var $control = $this.selectize({
             plugins: ['remove_button'],
             delimiter: ',',
             persist: false,
@@ -171,7 +172,6 @@ Form.prototype.select = function () {
                 this.$control_input.attr('data-v-excluded',true);
                 if (this.$control.hasClass('required'))
                   this.$input.prop('required', 'required');
-                console.log("select init!");
             },
             onChange: function(value) {
               this.$input.trigger('change');
@@ -197,7 +197,41 @@ Form.prototype.slider = function() {
           };
         $this.slick(config);
     });
-}
+};
+
+Form.prototype.widget =function() {
+    $('[data-widget]').each(function () {
+        var $this = $(this),
+            widget = $this.attr('data-widget');
+        switch (widget) {
+            case "collapse":
+                $this.on('click', function () {
+                    if (!$this.targetBox) {
+                        $this.targetBox = {
+                            target: $this.closest('.box').find('.box-body'),
+                            open: 0
+                        };
+                        $this.targetBox.height = $this.targetBox.target.height();
+                    }
+                    if (!$this.targetBox.open)
+                        $this.targetBox.target.animate({
+                            height: '0px'
+                        }, function () {
+                            $this.targetBox.open = 1;
+                            //$this.targetBox.target.hide();
+                        });
+                    else
+                        $this.targetBox.target.show().animate({
+                            height: $this.targetBox.height
+                        }, function () {
+                            $this.targetBox.open = 0;
+                            //$this.targetBox.target.css({height:'auto'});
+                        });
+                });
+                break;
+        }
+    });
+};
 
 UI.plugin('form', Form, {
     after: function () {
@@ -348,7 +382,7 @@ UI.ready(function (context) {
     $.fn.fill = function (data) {
         var fillData = function (data, self, isfirst, targetKey) {
             for (var key in data) {
-                if (data[key] == null) continue;
+                if (data[key] === null) continue;
                 if (typeof (data[key]) == "object" && !data[key].length) {
                     fillData(data[key], self, isfirst, targetKey + key + ".");
                     continue;
@@ -396,6 +430,8 @@ UI.ready(function (context) {
                     } else if (this.hasAttribute('data-select-input')) {
                         $this.val(data[key]);
                         this.fireEvent('update');
+                    }else if (this.nodeName === 'SELECT') {
+                        this.selectize.setValue(data[key]);
                     } else {
                         $this.val(data[key]);
                         if ($this.hasClass('select2'))
