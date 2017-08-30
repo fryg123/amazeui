@@ -9,6 +9,10 @@
   color: #FFF;
 }
 
+.theme-default aside {
+  background-color: #303437;
+}
+
 .theme-default .header > .am-nav a,
 .theme-default .header > .am-nav .search > i {
   color: #939aa0;
@@ -56,8 +60,16 @@ a {
   float: none;
 }
 
+.console .container {
+  height: 100%;
+}
+
 .console .hbox.stretch {
   height: 100%;
+}
+
+.console .aside {
+  width: 200px;
 }
 
 /*头部*/
@@ -92,7 +104,6 @@ a {
 }
 
 .header .brand {
-  width: 200px;
   float: left;
   position: relative;
 }
