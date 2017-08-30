@@ -15,8 +15,8 @@ var config = {
     __form = null;
 
 //判断是否支持FormData
-if (typeof (FormData) != "function") {
-    $(function () {
+if (typeof(FormData) != "function") {
+    $(function() {
         var oScript = document.createElement("script");
         oScript.type = "text/javascript";
         oScript.src = "/js/jquery.form.min.js";
@@ -24,7 +24,7 @@ if (typeof (FormData) != "function") {
     });
 }
 
-var Form = function (element, options) {
+var Form = function(element, options) {
     this.options = $.extend({}, Form.DEFAULTS, options);
     this.$element = $(element);
     this.init();
@@ -32,16 +32,17 @@ var Form = function (element, options) {
 
 Form.DEFAULTS = {};
 
-Form.prototype.init = function () {
+Form.prototype.init = function() {
     __form = this;
     this.radio();
     this.checkbox();
     this.select();
     this.slider();
     this.widget();
+    $('.scroll').panel({ iWheelStep: 30 });
 };
 //遍历
-Form.prototype.each = function (obj, fn) {
+Form.prototype.each = function(obj, fn) {
     var key, that = this;
     if (typeof fn !== 'function') return that;
     obj = obj || [];
@@ -56,27 +57,27 @@ Form.prototype.each = function (obj, fn) {
     }
     return that;
 };
-Form.prototype.checkbox = function () {
+Form.prototype.checkbox = function() {
     var self = this;
     var CLASS = {
             checkbox: ['am-form-checkbox', 'am-form-checked', 'checkbox'],
             _switch: ['am-form-switch', 'am-form-onswitch', 'switch']
         },
         checks = this.$element.find('input[type=checkbox]'),
-        setCheckBoxSkin = function () {
-            var check = $(this)
-            ,reElem = this.skinElement
-            ,RE_CLASS = this.skinClass
-            ,filter = check.attr('data-filter')
-            ,text = (check.attr('data-text') || '').split('|');
+        setCheckBoxSkin = function() {
+            var check = $(this),
+                reElem = this.skinElement,
+                RE_CLASS = this.skinClass,
+                filter = check.attr('data-filter'),
+                text = (check.attr('data-text') || '').split('|');
             reElem.hasClass(RE_CLASS[1]) ? (
-              reElem.removeClass(RE_CLASS[1]).find('em').text(text[1])
+                reElem.removeClass(RE_CLASS[1]).find('em').text(text[1])
             ) : (
                 reElem.addClass(RE_CLASS[1]).find('em').text(text[0])
             );
         };
 
-    checks.each(function (index, check) {
+    checks.each(function(index, check) {
         var $this = $(this),
             skin = $this.attr('data-skin'),
             text = ($this.attr('data-text') || '').split('|'),
@@ -99,24 +100,24 @@ Form.prototype.checkbox = function () {
         this.skinClass = RE_CLASS;
         if (this.disabled) return;
         //勾选
-        reElem.on('click', function () {
-          //获取过滤器
-          setCheckBoxSkin.call($this[0]);
-          $this.trigger('click');
+        reElem.on('click', function() {
+            //获取过滤器
+            setCheckBoxSkin.call($this[0]);
+            $this.trigger('click');
         });
     }).on('click', function() {
-      setCheckBoxSkin.call(this);
+        setCheckBoxSkin.call(this);
     }).on('change', function() {
-      setCheckBoxSkin.call(this);
+        setCheckBoxSkin.call(this);
     });
 };
 
-Form.prototype.radio = function () {
+Form.prototype.radio = function() {
     var self = this;
     var CLASS = 'am-form-radio',
         ICON = ['&#xe67f;', '&#xe697;'],
         radios = this.$element.find('input[type=radio]'),
-        setRadioSkin = function () {
+        setRadioSkin = function() {
             var radio = $(this),
                 reElem = this.skinElement,
                 ANIM = 'am-anim-scaleSpring',
@@ -124,7 +125,7 @@ Form.prototype.radio = function () {
                 forms = radio.parents(ELEM);
             var filter = radio.attr('data-filter'); //获取过滤器
             var sameRadio = forms.find('input[name=' + name.replace(/(\.|#|\[|\])/g, '\\$1') + ']'); //找到相同name的兄弟
-            self.each(sameRadio, function () {
+            self.each(sameRadio, function() {
                 var next = $(this).next('.' + CLASS);
                 //this.checked = false;
                 next.removeClass(CLASS + 'ed');
@@ -134,7 +135,7 @@ Form.prototype.radio = function () {
             reElem.find('.icon').addClass(ANIM).html(ICON[0]);
         };
 
-    radios.each(function (index, radio) {
+    radios.each(function(index, radio) {
         var $this = $(this),
             hasRender = $this.next('.' + CLASS),
             disabled = this.disabled;
@@ -145,21 +146,21 @@ Form.prototype.radio = function () {
         $this.after(reElem);
         this.skinElement = reElem;
         if (this.disabled) return;
-        reElem.on('click', function () {
+        reElem.on('click', function() {
             $this.trigger('click');
             setRadioSkin.call($this[0]);
             //radio[0].checked = true;
         });
-    }).on('click', function () {
+    }).on('click', function() {
         setRadioSkin.call(this);
-    }).on('change', function () {
+    }).on('change', function() {
         setRadioSkin.call(this);
     });
 };
 
-Form.prototype.select = function () {
+Form.prototype.select = function() {
     var selects = this.$element.find('select');
-    selects.each(function (index, select) {
+    selects.each(function(index, select) {
         var $this = $(this);
         if (typeof $this.attr('data-ignore') === 'string') return;
         var $control = $this.selectize({
@@ -168,14 +169,14 @@ Form.prototype.select = function () {
             persist: false,
             create: false,
             sortField: 'text',
-            onInitialize: function () {
-                this.$control_input.attr('data-v-excluded',true);
+            onInitialize: function() {
+                this.$control_input.attr('data-v-excluded', true);
                 if (this.$control.hasClass('required'))
-                  this.$input.prop('required', 'required');
+                    this.$input.prop('required', 'required');
             },
             onChange: function(value) {
-              this.$input.trigger('change');
-              this.$input.trigger('input');
+                this.$input.trigger('change');
+                this.$input.trigger('input');
             }
         });
     });
@@ -194,18 +195,18 @@ Form.prototype.slider = function() {
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1
-          };
+        };
         $this.slick(config);
     });
 };
 
-Form.prototype.widget =function() {
-    $('[data-widget]').each(function () {
+Form.prototype.widget = function() {
+    $('[data-widget]').each(function() {
         var $this = $(this),
             widget = $this.attr('data-widget');
         switch (widget) {
             case "collapse":
-                $this.on('click', function () {
+                $this.on('click', function() {
                     if (!$this.targetBox) {
                         $this.targetBox = {
                             target: $this.closest('.box').find('.box-body'),
@@ -216,14 +217,14 @@ Form.prototype.widget =function() {
                     if (!$this.targetBox.open)
                         $this.targetBox.target.animate({
                             height: '0px'
-                        }, function () {
+                        }, function() {
                             $this.targetBox.open = 1;
                             //$this.targetBox.target.hide();
                         });
                     else
                         $this.targetBox.target.show().animate({
                             height: $this.targetBox.height
-                        }, function () {
+                        }, function() {
                             $this.targetBox.open = 0;
                             //$this.targetBox.target.css({height:'auto'});
                         });
@@ -234,30 +235,30 @@ Form.prototype.widget =function() {
 };
 
 UI.plugin('form', Form, {
-    after: function () {
+    after: function() {
         if (UI.support.touch) {
 
         }
     }
 });
 
-UI.ready(function (context) {
+UI.ready(function(context) {
     $('.am-form', context).form();
 });
 
 // #region FormUtil
 
-(function ($) {
-    $.fn.asyncSubmit = function (opts) {
-        if (typeof (opts) === 'function')
+(function($) {
+    $.fn.asyncSubmit = function(opts) {
+        if (typeof(opts) === 'function')
             opts = {
                 success: opts
             };
-        return this.each(function () {
+        return this.each(function() {
             var self = this;
             var $this = $(this);
             if (typeof $this.attr('data-questions') === 'string') {
-                $this.find('input.other').change(function () {
+                $this.find('input.other').change(function() {
                     var isChecked = $(this).val() != "";
                     var $check = $(this).prev('input');
                     if (!$check.length)
@@ -269,7 +270,7 @@ UI.ready(function (context) {
                     $check.val(value);
                 });
             }
-            this.goSubmit = function () {
+            this.goSubmit = function() {
                 if (self.vm)
                     self.vm.submitting = true;
                 var $button = $(self).find("input[type='submit'],button[type='submit']").prop('disabled', true),
@@ -278,7 +279,7 @@ UI.ready(function (context) {
                     buttonHtml = $button.html();
                     $button.html('<i class="am-icon-circle-o-notch am-icon-spin"></i>正在提交...');
                 }
-                if (typeof (FormData) === 'function') {
+                if (typeof(FormData) === 'function') {
                     var formData = new FormData(this);
                     var url = $this.attr('action');
                     try {
@@ -290,19 +291,19 @@ UI.ready(function (context) {
                             cache: false,
                             processData: false,
                             contentType: false
-                        }).done(function (result) {
+                        }).done(function(result) {
                             if (self.vm)
                                 self.vm.submitting = false;
                             if (result.succ) {
                                 opts.success(result.data);
-                                setTimeout(function () {
+                                setTimeout(function() {
                                     $button.prop('disabled', false).html(buttonHtml);
                                 }, 1000);
                             } else {
                                 $button.prop('disabled', false).html(buttonHtml);
                                 alert(result.data);
                             }
-                        }).fail(function (data, textStatus, errorThrown) {
+                        }).fail(function(data, textStatus, errorThrown) {
                             $button.prop('disabled', false).html(buttonHtml);
                             if (self.vm)
                                 self.vm.submitting = false;
@@ -316,7 +317,7 @@ UI.ready(function (context) {
                 } else {
                     $(this).ajaxSubmit({
                         dataType: 'json',
-                        success: function (result) {
+                        success: function(result) {
                             $button.prop('disabled', false).html(buttonHtml);
                             if (result.succ)
                                 opts.success(result.data);
@@ -333,20 +334,20 @@ UI.ready(function (context) {
                 errorClass: 'am-form-error',
                 errorsWrapper: '<div class="am-error-list"></div>',
                 errorTemplate: '<div class="am-alert am-alert-danger"></div>',
-                classHandler: function (_el) {
+                classHandler: function(_el) {
                     return _el.$element.closest('.am-form-group');
                 },
                 errorsContainer: function(field) {
-                  if (field.$element.hasClass('selectized')) {
-                    return field.$element.parent();
-                  }
+                    if (field.$element.hasClass('selectized')) {
+                        return field.$element.parent();
+                    }
                     return field.$element[0];
                 }
             };
             if (opts.validate)
                 $.extend(parsleyOptions, opts.validate);
             console.log("set parsley!");
-            $(this).parsley(parsleyOptions).on('form:validate', function (formInstance) {
+            $(this).parsley(parsleyOptions).on('form:validate', function(formInstance) {
                 //检查所有cui方法
                 if (self.controls && self.controls.length) {
                     for (var i = 0; i < self.controls.length; i++) {
@@ -361,17 +362,17 @@ UI.ready(function (context) {
                     return;
                 }
                 formInstance.validationResult = true;
-            }).on('form:submit', function () {
+            }).on('form:submit', function() {
                 self.goSubmit();
                 return false;
-            }).on('form:validated', function () {
-                $.each(this.fields, function (key, field) {
+            }).on('form:validated', function() {
+                $.each(this.fields, function(key, field) {
                     if (field.validationResult === true)
                         field.$element.removeClass('am-field-error').addClass('am-field-valid');
                     else
                         field.$element.removeClass('am-field-success').addClass('am-field-error');
                 });
-            }).on('field:validated', function () {
+            }).on('field:validated', function() {
                 if (this.validationResult === true)
                     this.$element.removeClass('am-field-error').addClass('am-field-valid');
                 else
@@ -379,11 +380,11 @@ UI.ready(function (context) {
             });
         });
     };
-    $.fn.fill = function (data) {
-        var fillData = function (data, self, isfirst, targetKey) {
+    $.fn.fill = function(data) {
+        var fillData = function(data, self, isfirst, targetKey) {
             for (var key in data) {
                 if (data[key] === null) continue;
-                if (typeof (data[key]) == "object" && !data[key].length) {
+                if (typeof(data[key]) == "object" && !data[key].length) {
                     fillData(data[key], self, isfirst, targetKey + key + ".");
                     continue;
                 }
@@ -397,9 +398,9 @@ UI.ready(function (context) {
                     else
                         items = [];
                 }
-                $(inputs).each(function () {
+                $(inputs).each(function() {
                     var $this = $(this);
-                    if (typeof ($this.attr('data-no-fill')) !== 'undefined') return;
+                    if (typeof($this.attr('data-no-fill')) !== 'undefined') return;
                     if (isfirst) {
                         $this.attr('data-old', $this.val());
                         self.inputs.push(this);
@@ -430,7 +431,7 @@ UI.ready(function (context) {
                     } else if (this.hasAttribute('data-select-input')) {
                         $this.val(data[key]);
                         this.fireEvent('update');
-                    }else if (this.nodeName === 'SELECT') {
+                    } else if (this.nodeName === 'SELECT' && this.selectize) {
                         this.selectize.setValue(data[key]);
                     } else {
                         $this.val(data[key]);
@@ -440,7 +441,7 @@ UI.ready(function (context) {
                 });
             }
         };
-        return this.each(function () {
+        return this.each(function() {
             var isfirst = this.inputs == undefined;
             if (isfirst)
                 this.inputs = [];
@@ -448,18 +449,18 @@ UI.ready(function (context) {
             fillData(data, self, isfirst, "");
         });
     }
-    $.fn.resetForm = function () {
-        return this.each(function () {
+    $.fn.resetForm = function() {
+        return this.each(function() {
             if (!this.inputs) {
                 this.inputs = [];
                 var self = this;
-                $(this).find('input,textarea,select').each(function () {
+                $(this).find('input,textarea,select').each(function() {
                     $(this).attr('data-old', $(this).val());
                     self.inputs.push(this);
                 });
                 return;
             }
-            $(this.inputs).each(function () {
+            $(this.inputs).each(function() {
                 var type = $(this).attr('type');
                 if (type === 'file') {
                     if ($(this).attr('data-type') === 'image' && $(this).attr('data-src'))

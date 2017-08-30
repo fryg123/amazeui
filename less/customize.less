@@ -1,6 +1,27 @@
 @import "variables.less";
 @box-padding: 1.25rem;
 @box-header-padding: .6rem 1.25rem;
+//Common
+/*美化滚动条样式*/
+::-webkit-scrollbar-track { -webkit-box-shadow: none; box-shadow: none; border-radius: 10px; background-color: rgba(255, 255, 255, 0.6); }
+::-webkit-scrollbar { width: 8px; height: 8px; background-color: none; }
+::-webkit-scrollbar-thumb { border-radius: 10px; -webkit-box-shadow: none; box-shadow: none; background-color: rgba(0, 0, 0, 0.4); }
+.zUIpanelScrollBox, .zUIpanelScrollBar { width: 6px; top: 4px; right: 0; border-radius: 5px; }
+.zUIpanelScrollBox { background: black; opacity: 0.1; }
+.zUIpanelScrollBar { background: #fff; opacity: 0.5; }
+/*浏览器提示*/
+.browsehappy { text-align: center; padding: 15px 0; background: #F37B1D; color: white; font-size: 16px }
+.browsehappy a { font-weight: bold; text-decoration: underline; color: #FFF }
+/*flex*/
+.flex { box-sizing: border-box; -js-display: flex; display: -webkit-box; display: -ms-flexbox; display: flex; }
+.flex-h { -ms-flex-flow: row; flex-flow: row; }
+.flex-v { -ms-flex-flow: column; flex-flow: column; }
+.flex1 { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
+.flex2 { -webkit-box-flex: 2; -ms-flex: 2; flex: 2; }
+.flex3 { -webkit-box-flex: 3; -ms-flex: 3; flex: 3; }
+.flex-v-center { -webkit-box-pack: center; justify-content: center; }
+.flex-h-center { -webkit-box-align: center; align-items: center; }
+
 // Box
 // =============================================================================
 .box {
@@ -350,6 +371,9 @@
     .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
     .hook-btn-secondary;
 }
+
+.am-btn-success { background-color: #289985; }
+.am-btn-success:hover { background-color: #1F7667; }
 
 .am-modal-ft { padding: 12px 18px 12px 18px;border-top: 1px solid #e3e8ee; text-align: right; }
 .am-modal-hd {

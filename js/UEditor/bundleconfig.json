@@ -1,0 +1,9 @@
+[
+  {
+    "outputFileName": "../../js/UEditor/ueditor.all.min.js",
+    "inputFiles": [
+      "ueditor.config.js",
+      "ueditor.all.js"
+    ]
+  }
+]
