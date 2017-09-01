@@ -9972,10 +9972,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	                var next = $(this).next('.' + CLASS);
 	                //this.checked = false;
 	                next.removeClass(CLASS + 'ed');
-	                next.find('.icon').removeClass(ANIM).html(ICON[1]);
+	                next.find('.icon').removeClass(ANIM).removeClass(ICON[0]).addClass(ICON[1]);
 	            });
 	            reElem.addClass(CLASS + 'ed');
-	            reElem.find('.icon').addClass(ANIM).html(ICON[0]);
+	            reElem.find('.icon').addClass(ANIM).removeClass(ICON[1]).addClass(ICON[0]);
 	        };
 
 	    radios.each(function(index, radio) {
