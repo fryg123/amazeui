@@ -14,11 +14,11 @@
 .browsehappy a { font-weight: bold; text-decoration: underline; color: #FFF }
 /*flex*/
 .flex { box-sizing: border-box; -js-display: flex; display: -webkit-box; display: -ms-flexbox; display: flex; }
-.flex-h { -ms-flex-flow: row; flex-flow: row; }
-.flex-v { -ms-flex-flow: column; flex-flow: column; }
-.flex1 { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
-.flex2 { -webkit-box-flex: 2; -ms-flex: 2; flex: 2; }
-.flex3 { -webkit-box-flex: 3; -ms-flex: 3; flex: 3; }
+.flex-h { &:extend(.flex); -ms-flex-flow: row; flex-flow: row; }
+.flex-v { &:extend(.flex); -ms-flex-flow: column; flex-flow: column; }
+.flex1 { &:extend(.flex); -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
+.flex2 { &:extend(.flex); -webkit-box-flex: 2; -ms-flex: 2; flex: 2; }
+.flex3 { &:extend(.flex); -webkit-box-flex: 3; -ms-flex: 3; flex: 3; }
 .flex-v-center { -webkit-box-pack: center; justify-content: center; }
 .flex-h-center { -webkit-box-align: center; align-items: center; }
 
