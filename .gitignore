@@ -38,3 +38,5 @@ docs/examlsples/assets/js/amazeui*.js
 #customize
 tools/tasks/config.json
 dist/customized
+/docs/examples/assets/js/selectize.min.js
+/docs/examples/assets/js/parsley.min.js
