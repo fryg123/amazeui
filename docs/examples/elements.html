@@ -1,0 +1,232 @@
+﻿<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colorful Web UI Demo</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" href="../../dist/customized/amazeui.min.css">
+    <style>
+        .slider h3 {
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 9 ]>
+    <div class="am-alert am-alert-danger ie-warning" data-am-alert>
+      <button type="button" class="am-close">&times;</button>
+      <div class="am-container am-text-center">
+        抱歉，因您的浏览器版本过低本站暂不支持，请<a href="http://browsehappy.com/" target="_blank" style="color:yellow">点击此处升级浏览器</a>，由此给您带来的不便，敬请谅解！
+      </div>
+    </div>
+<![endif]-->
+
+    <div style="width:80%;margin:0 auto">
+        <div class="box box-success">
+            <div class="box-header">
+                <div class="pull-right box-tools"><button type="button" data-widget="collapse" data-toggle="tooltip" title="" class="am-btn am-btn-primary am-btn-icon am-fr" style="margin-right: 5px;" data-am-popover="{content: '折叠/展开', trigger: 'hover focus'}"><i class="am-icon-minus"></i></button></div>
+                <h3 class="box-title">收藏的菜单</h3>
+            </div>
+            <div class="box-body" style="display: block;">
+                <form class="am-form" id="myform" method="post" onsubmit="return false">
+                    <div class="am-form-group">
+                        <label for="doc-ipt-email-1">邮件<em>*</em></label>
+                        <input type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件" required>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="username">姓名</label>
+                        <input type="text" class="" id="username" placeholder="姓名" />
+                    </div>
+                    <div class="am-form-group">
+                        <label for="doc-ipt-pwd-1">密码</label>
+                        <input type="password" name="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧" required>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="doc-ipt-pwd-2">确认密码</label>
+                        <input type="password" class="" id="doc-ipt-pwd-2" data-v-equalto="#doc-ipt-pwd-1" placeholder="确认密码">
+                    </div>
+                    <div class="am-form-group">
+                        <label for="doc-ipt-file-1">原生文件上传域</label>
+                        <input type="file" id="doc-ipt-file-1">
+                        <p class="am-form-help">请选择要上传的文件...</p>
+                    </div>
+                    <div class="am-form-group am-form-file">
+                        <label for="doc-ipt-file-2">Amaze UI 文件上传域</label>
+                        <div>
+                            <button type="button" class="am-btn am-btn-default am-btn-sm"><i class="am-icon-cloud-upload"></i> 选择要上传的文件</button>
+                        </div>
+                        <input type="file" id="doc-ipt-file-2">
+                    </div>
+                    <div class="am-form-group">
+                        <label for="doc-ipt-file-1">复选框（至少选择两个）<em>*</em></label>
+                        <div style="margin-bottom: 1px">
+                            <input type="checkbox" name="checkbox1" title="复选1" checked required data-v-mincheck="2">
+                            <input type="checkbox" name="checkbox1" title="复选2" />
+                            <input type="checkbox" name="checkbox1" title="复选3" />
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="doc-ipt-file-1">复选原始风格(最多选择两个)</label>
+                        <div>
+                            <input type="checkbox" name="checkbox2" title="复选1" data-skin="primary" checked data-v-maxcheck="2">
+                            <input type="checkbox" name="checkbox2" title="复选2" data-skin="primary" />
+                            <input type="checkbox" name="checkbox2" title="复选3" data-skin="primary" />
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label>开关</label>
+                        <div>
+                            <input type="checkbox" name="checkbox3" title="复选1" value="1" data-skin="switch" checked>
+                            <input type="checkbox" name="checkbox4" title="复选2" value="2" data-skin="switch" data-text="ON|OFF" />
+                            <input type="checkbox" name="checkbox5" title="复选3" value="3" data-skin="switch" data-text="开启|关闭" />
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label>单选框</label>
+                        <div>
+                            <input type="radio" name="sex" title="男" id="radio11" required>
+                            <input type="radio" name="sex" title="女" />
+                            <input type="radio" name="sex" title="人妖" />
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="doc-select-1">下拉框 <button type="button" onclick="alert($('#doc-select-1')[0].nodeName)">设置值二</button></label>
+                        <select name="select1" id="doc-select-1" placeholder="请选择..." required>
+                            <option value="">请选择...</option>
+                            <option value="option1">选项一</option>
+                            <option value="option2">选项二</option>
+                            <option value="option3">选项三</option>
+                        </select>
+                        <span class="am-form-caret"></span>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="doc-select-2">下拉多选框</label>
+                        <select multiple name="select2" id="doc-select-2" placeholder="请选择..." required data-v-maxcheck="2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="doc-ta-1">文本域</label>
+                        <textarea class="" rows="5" id="doc-ta-1"></textarea>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="doc-ta-1">验证框架</label>
+                        <div><a href="http://parsleyjs.org/doc/examples.html" target="_blank">http://parsleyjs.org/doc/examples.html</a></div>
+                    </div>
+                    <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
+                </form>
+            </div>
+        </div>
+        <div class="am-panel am-panel-default">
+            <div class="am-panel-hd">其他组件</div>
+            <div class="am-panel-bd">
+                <h3>Tab</h3>
+                <div class="am-tabs" data-am-tabs="{noSwipe: 1}" id="doc-tab-demo-1">
+                    <ul class="am-tabs-nav am-nav am-nav-tabs">
+                        <li class="am-active"><a href="javascript: void(0)">流浪</a></li>
+                        <li><a href="javascript: void(0)">流浪</a></li>
+                        <li><a href="javascript: void(0)">再流浪</a></li>
+                    </ul>
+
+                    <div class="am-tabs-bd">
+                        <div class="am-tab-panel am-active">
+                            Tab1
+                        </div>
+                        <div class="am-tab-panel">
+                            Tab2...
+                        </div>
+                        <div class="am-tab-panel">
+                            Tab3...
+                        </div>
+                    </div>
+                </div>
+                <h3>Lazyload（<a href="https://github.com/aFarkas/lazysizes" target="_blank">https://github.com/aFarkas/lazysizes</a>)</h3>
+                <div><img data-src="http://s.amazeui.org/assets/2.x/i/ui/mascot.png" class="lazyload" /></div>
+                <div>
+                    <iframe frameborder="0" class="lazyload" allowfullscreen="" data-src="http://alipay.7csoft.com/">
+                    </iframe>
+                </div>
+                <h3>Slick（图文轮播：<a href="https://github.com/kenwheeler/slick" target="_blank">https://github.com/kenwheeler/slick</a>）</h3>
+                <div class="slider single-item">
+                    <div>
+                        <h3>1</h3>
+                    </div>
+                    <div>
+                        <h3>2</h3>
+                    </div>
+                    <div>
+                        <h3>3</h3>
+                    </div>
+                </div>
+                <h3>Modal</h3>
+                <div>
+                    <button type="button" class="am-btn am-btn-primary" data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0, width: 400, height: 'auto'}">Show Modal</button>
+                </div>
+                <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+                    <div class="am-modal-dialog">
+                        <div class="am-modal-hd">
+                            <a href="javascript: void(0)" class="am-close" data-am-modal-close>&times;</a>
+                            <h3>Modal 标题</h3>
+                        </div>
+                        <div class="am-modal-bd">
+                            Modal 内容。本 Modal 无法通过遮罩层关闭。
+                        </div>
+                        <div class="am-modal-ft am-text-right">
+                            <button type="button" class="am-btn am-btn-link" data-am-modal-close>取消</button>
+                            <button type="button" class="am-btn am-btn-info">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="../../dist/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--<![endif]-->
+    <script src="../../dist/customized/amazeui.js"></script>
+    <script>
+        $('#myform').asyncSubmit(function(data) {
+            alert(data);
+        });
+    </script>
+</body>
+
+</html>

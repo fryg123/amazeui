@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="console">
+<head>
+    <meta charset="utf-8" />
+    <title>Colorful Web UI Admin</title>
+    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="stylesheet" href="assets/cui.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+    <div class="container theme-default" id="app">
+        <header class="header">
+            <div class="brand aside">
+                <a class="am-btn am-btn-link am-show-sm am-icon-list am-fl" data-toggle="aside-mobi"></a>
+                <a href="/" target="_blank" class="title">
+                    <!--<img src="assets/i/app-icon72x72@2x.png" alt=".">-->
+                    <i class="am-icon-yelp"></i>
+                    <span>七彩互动</span>
+                </a>
+                <a class="am-btn am-btn-link am-show-sm am-icon-cog am-fr" data-toggle="user-menu"></a>
+            </div>
+            <ul class="am-nav am-hide-sm">
+                <li>
+                    <a data-toggle="aside" class="am-icon-dedent"></a>
+                </li>
+                <li class="search">
+                    <i class="am-icon-search"></i>
+                    <input type="text" name="keyword" placeholder="请输入关键字..." />
+                </li>
+            </ul>
+            <ul class="am-nav am-hide-sm am-fr">
+                <li class="am-dropdown" data-am-dropdown>
+                    <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+                        <i class="am-icon-envelope"></i>
+                        <span class="am-badge am-badge-success am-round item-feed-badge">4</span>
+                    </a>
+                    <ul class="am-dropdown-content dropdown-menu">
+                        <li>
+                            <a>
+                                <div class="title">
+                                    <i class="am-icon-line-chart"></i>
+                                    <span> 有6笔新的销售订单</span>
+                                </div>
+                                <div class="time">
+                                    12分钟前
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="title">
+                                    <i class="am-icon-line-chart"></i>
+                                    <span> 有6笔新的销售订单</span>
+                                </div>
+                                <div class="time">
+                                    12分钟前
+                                </div>
+                            </a>
+                        </li>
+                        <li class="am-divider"></li>
+                        <li>
+                            <a class="am-text-center"><i class="am-icon-circle-o"></i> 查看更多...</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="am-dropdown" data-am-dropdown>
+                    <a class="am-dropdown-toggle user" data-am-dropdown-toggle href="javascript:;">
+                        <span class="photo am-fr"><img src="assets/i/user01.png" class="am-circle" /></span>
+                        <span>超级管理员</span> <span class="am-icon-caret-down"></span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <li><a href="#">个人信息</a></li>
+                        <li class="am-divider"></li>
+                        <li><a href="#">退出登录</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="am-icon-cogs" data-toggle="nav-right" title="切换导航菜单" @click="showControlPanel=!showControlPanel"></a>
+                </li>
+            </ul>
+        </header>
+        <section class="hbox stretch">
+            <aside class="aside">
+                <div class="scroll nav">
+                    <ul>
+                        <li class="active">
+                            <a href="#">
+                                <span class="am-icon-angle-left"></span>
+                                <i class="am-icon-home"></i>根菜单
+                            </a>
+                            <ul>
+                                <li class="active">
+                                    <a href="#">
+                                        <span class="am-icon-angle-left"></span>
+                                        <i class="am-icon-angle-double-right"></i>二级菜单
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="am-icon-angle-double-right"></i>三级菜单</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="am-icon-edit"></i>表单元素</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <section class="content">
+                <div class="flex-v" id="content">
+                    <div class="menu">
+                        <ol class="am-breadcrumb">
+                            <li><a href="#" class="am-icon-home">首页</a></li>
+                            <li><a href="#">分类</a></li>
+                            <li class="am-active">内容</li>
+                        </ol>
+                    </div>
+                    <div class="page flex1">
+                        <iframe frameborder="0" src="http://alipay.7csoft.com" class="flex1"></iframe>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <div class="control-sidebar" :class="{'open':showControlPanel}">
+            <div class="am-tabs" data-am-tabs>
+                <ul class="am-tabs-nav am-nav am-nav-tabs">
+                    <li class="am-active"><a href="javascript: void(0)" class="am-icon-home"></a></li>
+                    <li><a href="javascript: void(0)" class="icon icon-skin"></a></li>
+                    <li><a href="javascript: void(0)" class="am-icon-cog"></a></li>
+                </ul>
+                <div class="am-tabs-bd">
+                    <div class="am-tab-panel am-active">
+                        <h3>常用菜单</h3>
+                        <ul class="am-nav">
+                            <li><a href="#"><i class="am-icon-home"></i>网站首页</a></li>
+                            <li><a href="#"><i class="am-icon-user"></i>个人信息</a></li>
+                            <li><a href="#"><i class="am-icon-power-off"></i>退出登录</a></li>
+                        </ul>
+                    </div>
+                    <div class="am-tab-panel">
+                        ...
+                    </div>
+                    <div class="am-tab-panel">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="../../dist/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--<![endif]-->
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+    <script src="assets/cui.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                menus: [{
+                    id: 1, text: '根菜单', url: '#', icon: 'home'
+                    , children: [
+                        {
+                            id: 1, text: '二级菜单', url: '#', icon: 'angle-double-right'
+                            ,children: [
+                                { id: 1, text: '二级菜单', url: '#', icon: 'angle-double-right', }
+                            ]
+                        }
+                    ]
+                },
+                    {
+                        id: 1, text: '表单示例', url: '#', icon: 'edit'
+                    }
+                ],
+                current: null,
+                loading: false,
+                showControlPanel: false //显示隐藏右侧控制面板
+            },
+            methods: {
+                toggleNav: function () {
+
+                },
+                showPage: function (menu) {
+
+                },
+                checkResize: function () {
+                    if (!this.$header)
+                    {
+                        this.$header = $('.header');
+                        this.$content = $('#content');
+                    }
+                    var h = $(window).height() - this.$header.height();
+                    $('#content').css({ 'height': h });
+                }
+            },
+            mounted: function () {
+                var self = this;
+                $(window).on('resize', function () {
+                    self.checkResize();
+                });
+                this.checkResize();
+            }
+        })
+    </script>
+</body>
+</html>

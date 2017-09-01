@@ -1,0 +1,418 @@
+/*变量*/
+
+//左侧导航宽度
+$nav-menu-width:200px;
+//头部高度
+$header-height: 60px;
+//右侧设置面板宽度
+$control-sidebar-width: 200px;
+
+/*Theme*/
+
+$theme-body-bg: #f2f4f8;
+$theme-color:#4cb6cb;
+$theme-header-bg:#FFF;
+$theme-header-bg-hover:rgba(0, 0, 0, 0.1);
+$theme-header-color:#939aa0;
+$theme-header-color-hover:#333;
+$theme-sidebar-bg:#303437;
+$theme-sidebar-bg-hover:rgba(255, 255, 255, 0.1);
+$theme-sidebar-color:#c1d1dc;
+$theme-sidebar-color-hover:#FFF;
+
+/*开始*/
+
+.theme-default {
+    .brand {
+        background-color: $theme-color;
+    }
+    .brand {
+        color: #FFF
+    }
+    .header {
+        background-color: $theme-header-bg;
+    }
+    .header>.am-nav {
+        a,
+        .search>i {
+            color: $theme-header-color
+        }
+        li>a:hover,
+        li>a:focus,
+        >li.am-active>a,
+        >li.am-active>a:hover,
+        >li.am-active>a:focus {
+            background-color: $theme-header-bg-hover;
+            color: $theme-header-color-hover
+        }
+    }
+    //导航菜单背景
+    aside,
+    .control-sidebar {
+        background-color: $theme-sidebar-bg
+    }
+    //左侧导航菜单
+    .nav li {
+        a {
+            color: $theme-sidebar-color;
+        }
+        a:hover,
+        a:active,
+        &.active>a {
+            color: $theme-sidebar-color-hover
+        }
+    }
+    .nav>ul {
+        >li.active>a,
+        >li.active>a:hover,
+        >li.active>a:active,
+        >li>a:hover,
+        >li>a:active {
+            background-color: $theme-sidebar-bg-hover;
+            border-left: 3px solid $theme-color;
+        }
+    }
+    //右侧设置
+    .control-sidebar {
+        .am-nav-tabs>li>a {
+            color: $theme-sidebar-color;
+            background-color: $theme-sidebar-bg-hover;
+        }
+        .am-nav-tabs>li>a:hover,
+        .am-nav-tabs>li>a:active,
+        .am-nav-tabs>li>a:focus,
+        .am-nav-tabs>li.am-active>a,
+        {
+            color: $theme-sidebar-color-hover;
+            background-color: $theme-sidebar-bg;
+        }
+        .am-tabs-bd {
+            color: $theme-sidebar-color-hover;
+            .am-nav {
+                >li>a {
+                    color: $theme-sidebar-color;
+                    background-color: $theme-sidebar-bg
+                }
+                >li>a:hover,
+                >li>a:active,
+                >li>a:focus {
+                    background-color: $theme-sidebar-bg-hover;
+                }
+            }
+        }
+    }
+}
+
+
+/*Common*/
+
+html,
+body {
+    background-color: $theme-body-bg;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+div,
+a,
+table,
+span,
+em {
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", 'Source Sans Pro', "Microsoft YaHei", "微软雅黑", Arial, sans-serif
+}
+
+.console,
+.console body {
+    height: 100%;
+    overflow: hidden
+}
+
+a {
+    cursor: pointer;
+}
+
+.hbox {
+    display: table;
+    table-layout: fixed;
+    border-spacing: 0;
+    width: 100%;
+    >aside,
+    >section {
+        display: table-cell;
+        vertical-align: top;
+        height: 100%;
+        float: none;
+    }
+}
+
+.vbox {
+    display: table;
+    table-layout: fixed;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+    >.row {
+        display: table-row;
+        vertical-align: top;
+        height: 100%;
+        float: none;
+    }
+}
+
+.container {
+    height: 100%;
+    position: relative;
+}
+
+.hbox.stretch {
+    height: 100%;
+}
+
+.aside {
+    width: $nav-menu-width
+}
+
+
+/*头部*/
+
+.header {
+    position: relative;
+    z-index: 1000;
+    min-height: $header-height;
+    margin: 0;
+    padding: 0;
+    .search {
+        line-height: $header-height;
+        padding-left: 20px;
+        >i {
+            margin-right: 10px;
+        }
+        input {
+            border: 0;
+            outline: 0;
+            height: 30px;
+            line-height: 30px;
+            margin-top: -5px;
+        }
+    }
+    .am-dropdown-content {
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.1)
+    }
+    .brand {
+        float: left;
+        position: relative;
+    }
+    .brand>.am-btn {
+        position: absolute;
+        font-size: 1.3em;
+        padding: 9px 16px;
+        line-height: 30px;
+        left: 0;
+        text-decoration: none;
+    }
+    .brand>.title {
+        display: inline-block;
+        float: none;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        height: auto;
+        line-height: $header-height;
+        padding: 0 20px;
+        img {
+            max-height: 30px;
+            max-width: 30px;
+            vertical-align: middle;
+            margin-top: -4px;
+        }
+    }
+    a {
+        color: #ffffff;
+    }
+    //右上角头像
+    .user {
+        .photo {
+            width: 40px;
+            display: inline-block;
+            position: relative;
+            margin: -10px 0 0 10px;
+            img {
+                height: auto;
+                max-width: 100%;
+                vertical-align: middle;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.header>.am-nav {
+    float: left;
+    margin: 0;
+    padding-left: 0;
+    li {
+        float: left;
+        display: block;
+        position: relative;
+    }
+    >li+li {
+        margin-top: 0
+    }
+    .am-dropdown-content li {
+        float: none;
+        a {
+            padding: 5px 15px;
+            clear: both;
+            line-height: 20px;
+            color: #333;
+            font-weight: normal;
+            white-space: nowrap;
+            .time {
+                color: #939aa0;
+                font-size: 12px;
+            }
+        }
+    }
+    &.am-fr {
+        float: right
+    }
+    a {
+        padding: 20px;
+        line-height: 20px
+    }
+    .item-feed-badge {
+        position: absolute;
+        top: 12px;
+        right: 4px;
+    }
+}
+
+
+/*****左侧导航菜单******/
+
+.nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+        position: relative;
+        display: block;
+        ul {
+            display: none;
+            margin-left: 10px;
+        }
+        >a {
+            border-left: 3px solid transparent;
+            display: block;
+            padding: 0 20px 0 17px;
+            height: 40px;
+            line-height: 40px;
+            position: relative;
+            transition: background-color .3s ease-in-out 0s;
+            >i {
+                margin-right: 10px;
+            }
+            >span {
+                float: right;
+                margin-right: 5px;
+            }
+            >span:before {
+                content: "\f104"
+            }
+        }
+    }
+    li.active {
+        >ul {
+            display: block;
+        }
+        >a>span::before {
+            content: "\f107"
+        }
+    }
+}
+
+
+/*******内容页********/
+
+.content {
+    .menu {
+        height: 40px;
+        line-height: 40px;
+        .am-breadcrumb {
+            margin: 0 10px;
+            padding: 0;
+        }
+    }
+    .page {
+        padding: 0 0 0 10px
+    }
+}
+
+
+/******右侧设置*******/
+
+.control-sidebar {
+    width: $control-sidebar-width;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: -$control-sidebar-width;
+    transition: right .5s ease-in-out;
+    padding-top: $header-height;
+    .am-tabs {
+        .am-nav-tabs {
+            display: table;
+            width: 100%;
+            border: 0;
+            >li {
+                display: table-cell;
+                text-align: center;
+                float: none;
+                margin: 0;
+            }
+            >li>a:hover {
+                border: 0;
+            }
+            >li>a {
+                margin: 0;
+                border: 0;
+            }
+        }
+        .am-tabs-bd {
+            border: 0;
+            .am-tab-panel {
+                padding: 0;
+            }
+            h3 {
+                margin: 15px 10px 10px 15px;
+                font-weight: normal;
+            }
+            .am-nav {
+                padding: 0;
+                margin: 0;
+                >li>a {
+                    padding: 0.4em 1.2em;
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.control-sidebar.open {
+    right: 0;
+}
