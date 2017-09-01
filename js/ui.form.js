@@ -92,7 +92,7 @@ Form.prototype.checkbox = function() {
         var reElem = $(['<div class="am-unselect ' + RE_CLASS[0] + (
             check.checked ? (' ' + RE_CLASS[1]) : '') + (disabled ? ' am-checkbox-disbaled ' + DISABLED : '') + '" data-skin="' + (skin || '') + '">', {
             _switch: '<em>' + ((check.checked ? text[0] : text[1]) || '') + '</em><i></i>'
-        }[skin] || ((check.title.replace(/\s/g, '') ? ('<span>' + check.title + '</span>') : '') + '<i class="icon">' + (skin ? '&#xe6a5;' : '&#xe61e;') + '</i>'), '</div>'].join(''));
+        }[skin] || ((check.title.replace(/\s/g, '') ? ('<span>' + check.title + '</span>') : '') + '<i class="icon ' + (skin ? 'icon-dui' : 'icon-check') + '"></i>'), '</div>'].join(''));
 
         hasRender[0] && hasRender.remove(); //如果已经渲染，则Rerender
         $this.after(reElem);
@@ -115,7 +115,7 @@ Form.prototype.checkbox = function() {
 Form.prototype.radio = function() {
     var self = this;
     var CLASS = 'am-form-radio',
-        ICON = ['&#xe67f;', '&#xe697;'],
+        ICON = ['icon-radio-checked', 'icon-radio'],
         radios = this.$element.find('input[type=radio]'),
         setRadioSkin = function() {
             var radio = $(this),
@@ -141,7 +141,7 @@ Form.prototype.radio = function() {
             disabled = this.disabled;
         if (typeof $this.attr('data-ignore') === 'string') return $this.show();
         //替代元素
-        var reElem = $(['<div class="am-unselect ' + CLASS + (radio.checked ? (' ' + CLASS + 'ed') : '') + (disabled ? ' am-radio-disbaled ' + DISABLED : '') + '">', '<i class="am-anim icon">' + ICON[radio.checked ? 0 : 1] + '</i>', '<span>' + (radio.title || '未命名') + '</span>', '</div>'].join(''));
+        var reElem = $(['<div class="am-unselect ' + CLASS + (radio.checked ? (' ' + CLASS + 'ed') : '') + (disabled ? ' am-radio-disbaled ' + DISABLED : '') + '">', '<i class="am-anim icon ' + ICON[radio.checked ? 0 : 1] + '"></i>', '<span>' + (radio.title || '未命名') + '</span>', '</div>'].join(''));
         hasRender[0] && hasRender.remove(); //如果已经渲染，则Rerender
         $this.after(reElem);
         this.skinElement = reElem;
